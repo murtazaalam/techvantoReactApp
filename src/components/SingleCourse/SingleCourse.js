@@ -1,0 +1,487 @@
+import React from 'react';
+
+const url = "http://techvanto.herokuapp.com/allcourses/619de91852c9cc8d9bbb2805";
+
+class SingleCourse extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            singleCourse:''
+        }
+        console.log("constructor")
+    }
+    render(){
+        console.log(this.state);
+        console.log("render")
+        
+        return(
+            <>
+                <section class="page-heading">
+                    <div class="container">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html" class="home">
+                                        Home
+                                        <div class="line"></div>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="courses.html" class="home">
+                                        Courses
+                                        <div class="line"></div>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#" class="home">
+                                        Programming Languages
+                                        <div class="line"></div>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Angular – The Complete Guide (2020 Edition)
+                                </li>
+                            </ol>
+                        </nav>
+                        <div class="my-container">
+                            <div class="course-head">
+                                <h4>
+                                    <a href="#">Programming Languages</a>
+                                </h4>
+                                <h2>
+                                    Angular – The Complete Guide (2020 Edition)
+                                </h2>
+                                <div class="instructor-info">
+                                    <div class="instr-pic">
+                                        <img src="images/instructor_1.jpg" class="img-fluid" alt="instructor-image"/>
+                                    </div>
+                                    <div class="instr-name">
+                                        <span>Cikgu Siti Negro</span>
+                                    </div>
+                                    <div class="update-date">
+                                        <span>Last Update July 5, 2021</span>
+                                    </div>
+                                </div>
+                                <div class="total-enrolled">
+                                    <i class="fa fa-user"></i>
+                                    <span>3 already enrolled</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="course-detail">
+                    <div class="container">
+                        <div class="my-container row">
+                            <div class="col-lg-8 col-md-12">
+
+                                <div class="about-course">
+                                    <h4>About This Course</h4>
+                                    <p>
+                                        From <b>Setup</b> to <b>Deployment</b>, this course covers it all! You’ll learn all about Components, Directives, 
+                                        Services, Forms, Http Access, Authentication, Optimizing an Angular App with Modules and Offline 
+                                        Compilation and much more – and in the end: You’ll learn how to deploy an application!<br/><br/>
+                                        But that’s not all! This course will also show you how to use the Angular CLI and feature 
+                                        a complete project, which allows you to practice the things learned throughout the course!<br/><br/>
+                                        Angular is one of the most modern, performance-efficient and powerful frontend frameworks you 
+                                        can learn as of today. It allows you to build great web apps which offer awesome user experiences! 
+                                        Learn all the fundamentals you need to know to get started developing Angular applications right away.
+                                    </p> 
+                                </div>
+                                <div class="learning-obj">
+                                    <h4>Learning Objectives</h4>
+                                    <div class="lo-list row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <p>
+                                                <span><i class="fa fa-check"></i></span>
+                                                Develop modern, complex, responsive and scalable web applications with Angular 11
+                                            </p>
+                                            <p>
+                                                <span><i class="fa fa-check"></i></span>
+                                                Use the gained, deep understanding of the Angular fundamentals to quickly establish yourself 
+                                                as a frontend developer
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <p>
+                                                <span><i class="fa fa-check"></i></span>
+                                                Fully understand the architecture behind an Angular application and how to use it
+                                            </p>
+                                            <p>
+                                                <span><i class="fa fa-check"></i></span>
+                                                Create single-page applications with one of the most modern JavaScript frameworks out there
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="requirements">
+                                    <h4>Requirements</h4>
+                                    <ul>
+                                        <li>
+                                            <span><i class="fa fa-check"></i></span>
+                                            <span>NO Angular 1 or Angular 2 knowledge is required!</span>
+                                        </li>
+                                        <li>
+                                            <span><i class="fa fa-check"></i></span>
+                                            <span>Basic HTML and CSS knowledge helps, but isn't a must-have</span>
+                                        </li>
+                                        <li>
+                                            <span><i class="fa fa-check"></i></span>
+                                            <span>Prior TypeScript knowledge also helps but isn't necessary to benefit from this course</span>
+                                        </li>
+                                        <li>
+                                            <span><i class="fa fa-check"></i></span>
+                                            <span>Basic JavaScript knowledge is required</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="target-audience">
+                                    <h4>Target Audience</h4>
+                                    <ul>
+                                        <li>
+                                            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+                                            <span>
+                                                Newcomer as well as experienced frontend developers interested in learning a modern 
+                                                JavaScript framework
+                                            </span>
+                                            </li>
+                                        <li>
+                                            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+                                            <span>
+                                                This course is for everyone interested in learning a state-of-the-art frontend JavaScript 
+                                                framework
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+                                            <span>
+                                                Prior TypeScript knowledge also helps but isn't necessary to benefit from this course
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+                                            <span>
+                                                Taking this course will enable you to be amongst the first to gain a very solid understanding 
+                                                of Angular
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="curriculum">
+                                    <div class="header">
+                                        <h4>Curriculum</h4>
+                                        <div>
+                                            <p>6 Lessons</p>
+                                            <p>32h 45m</p>
+                                        </div>
+                                    </div>
+                                    <div class="cu-list">
+                                        <div class="accordion">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button type="button" class="accordion-button" data-bs-toggle="collapse" 
+                                                    data-bs-target="#basic">
+                                                        <span class="minus active"><i class="fas fa-minus"></i></span>
+                                                        <span class="plus active"><i class="fas fa-plus"></i></span>
+                                                        The Basics
+                                                </button>
+                                                </h2>
+                                                <div id="basic" class="accordion-collapse collapse show">
+                                                    <div class="accordion-body">
+                                                        hiiiii
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button type="button" class="accordion-button" data-bs-toggle="collapse" 
+                                                    data-bs-target="#project">
+                                                        <span class="minus"><i class="fas fa-minus"></i></span>
+                                                        <span class="plus"><i class="fas fa-plus"></i></span>
+                                                        Course Project - Components & Databinding
+                                                </button>
+                                                </h2>
+                                                <div id="project" class="accordion-collapse collapse">
+                                                    <div class="accordion-body">
+                                                        hiiiii
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button type="button" class="accordion-button" data-bs-toggle="collapse" 
+                                                    data-bs-target="#services">
+                                                        <span class="minus"><i class="fas fa-minus"></i></span>
+                                                        <span class="plus"><i class="fas fa-plus"></i></span>
+                                                        Using Services & Dependency Injection
+                                                </button>
+                                                </h2>
+                                                <div id="services" class="accordion-collapse collapse">
+                                                    <div class="accordion-body">
+                                                        hiiiii
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="instructor">
+                                    <h4>Your Instructor</h4>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 small-col-4">
+                                            <div class="instr-image">
+                                                <img src="images/instructor_1.jpg" class="img-fluid" alt="instr-image"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8 small-col-8">
+                                            <div class="instr-name">
+                                                Cikgu Siti Negro
+                                            </div>
+                                            <div class="instr-rating">
+                                                <span>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </span>
+                                                <span>3.75</span>
+                                                <span>/5</span>
+                                            </div>
+                                            <div class="instr-other-details">
+                                                <div class="other-details">
+                                                    <i class="far fa-play-circle"></i>
+                                                    <span>3 Courses</span>
+                                                </div>
+                                                <div class="other-details">
+                                                    <i class="far fa-comment-alt"></i>
+                                                    <span>8 Reviews</span>
+                                                </div>
+                                                <div class="other-details">
+                                                    <i class="far fa-user"></i>
+                                                    <span>133 Students</span>
+                                                </div>
+                                            </div>
+                                            <div class="instr-about">
+                                                Abbs is one of the top bca colleges in bangalore. ABBS BCA program has an excellent group 
+                                                of dedicated faculty & experts from the IT industry, guiding the students
+                                                <a href="#">
+                                                    <i class="fa fa-plus"></i>
+                                                    <span>See more</span>
+                                                </a>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="instr-review">
+                                        <h4>Write a review</h4>
+                                        <button type="button">Write a review</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="video-box">
+                                    <div class="video">
+                                        <iframe src="https://www.youtube.com/embed/oOm66m59jLc" 
+                                            title="YouTube video player" frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                    <div class="course-detail">
+                                        <div class="course-price">
+                                            <span>$49</span>
+                                            <span>.99</span>
+                                        </div>
+                                        <div class="other">
+                                            <p>
+                                                <span class="icon"><i class="fas fa-sliders-h"></i></span>
+                                                <span class="heading">Level</span>
+                                            </p>
+                                            <p class="sub-heading">
+                                                Beginner
+                                            </p>    
+                                        </div> 
+                                        <div class="other">
+                                            <p>
+                                                <span class="icon"><i class="far fa-clock"></i></span>
+                                                <span class="heading">Duration</span>
+                                            </p>
+                                            <p class="sub-heading">
+                                                32.8 hours
+                                            </p>    
+                                        </div>   
+                                        <div class="other">
+                                            <p>
+                                                <span class="icon"><i class="far fa-play-circle"></i></span>
+                                                <span class="heading">Lectures</span>
+                                            </p>
+                                            <p class="sub-heading">
+                                                6 Lectures
+                                            </p>   
+                                        </div> 
+                                        <div class="other">
+                                            <p>
+                                                <span class="icon"><i class="fas fa-tag"></i></span>
+                                                <span class="heading">Subject</span>
+                                            </p>
+                                            <p class="sub-heading">
+                                                Programming Language
+                                            </p>    
+                                        </div>     
+                                        <div class="other">
+                                            <p>
+                                                <span class="icon"><i class="fas fa-globe"></i></span>
+                                                <span class="heading">Language</span>
+                                            </p>
+                                            <p class="sub-heading">
+                                                Russian
+                                            </p>    
+                                        </div> 
+                                        <div> 
+                                            <button type="button">
+                                                <span>
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </span>
+                                                Add to cart
+                                            </button>
+                                            <button type="button">
+                                                Add to wishlist
+                                            </button>
+                                        </div>
+                                        <div class="social-media">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fab fa-linkedin-in"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="fab fa-youtube"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="category-box">
+                                    <h4>Course categories</h4>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Art & Design
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Business
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Data Science
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Development
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Finance
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Health & Fitness
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Lifestyle
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Marketing
+                                            </a>
+                                        </li>
+                                            <li>
+                                            <a href="#">
+                                                Music
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Personal Development
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Photography
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                Teaching & Academics 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="related-course">
+                                    <h4>Related Courses</h4>
+                                    <div class="course-box">
+                                        <a href="#">
+                                            <img src="images/course_img_1.jpg"/>
+                                        </a>  
+                                        <div class="detail">
+                                            <a href="#" class="title">Learn Python Programming...</a>
+                                            <div>
+                                                <span>$79</span>
+                                                <span>.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="course-box">
+                                        <a href="#">
+                                            <img src="images/course_img_2.jpg"/>
+                                        </a>  
+                                        <div class="detail">
+                                            <a href="#" class="title">C# Basic For Beginners & Intermediate</a>
+                                            <div>
+                                                <span>$79</span>
+                                                <span>.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </>
+        )
+    }
+
+    componentDidMount(){
+        console.log("mount")
+        fetch(url, {method:'GET'})
+        .then((res)=>res.json())
+        .then((data)=>{
+            this.setState({singleCourse:data[0]})
+        })
+    }
+}
+export default SingleCourse;
