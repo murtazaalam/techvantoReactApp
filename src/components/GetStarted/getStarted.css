@@ -1,0 +1,65 @@
+.get-started{
+    background: #fff;
+    position: relative;
+}
+.get-started-btn button{
+    border: none;
+    background: #FFC221;
+    padding: 12px 35px 12px 35px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.get-started-box{
+    text-align: center;
+    padding: 30px 5px 30px 5px;
+    background: #fadddd;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 36px;
+}
+.get-started-box .text p:first-child{
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--red);
+}
+.get-started-box .text p:last-child{
+    font-size: 18px;
+}
+.get-started-box .icon{
+    position: absolute;
+    top: -35px;
+    width: 60px;
+    height: 60px;
+    background: var(--red);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+@media screen and (min-width: 768px){
+    .get-started-box{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 730px;
+        padding: 15px 0 15px 0;
+    }
+    .get-started-box .text{
+        text-align: left;
+    }
+    .get-started .container{
+        text-align: -webkit-center;
+    }
+    .get-started-box .icon{
+        top: -35px;
+        left: 10px;
+    }
+}
+@media screen and (min-width: 992px){
+    .get-started-box .icon{
+        top: -25px;
+        left: -22px;
+    }
+}

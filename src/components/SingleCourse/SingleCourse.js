@@ -1,81 +1,91 @@
 import React from 'react';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
+import RelatedCourses from './RelatedCourses';
+import './singleCourse.css';
 
-const url = "http://techvanto.herokuapp.com/allcourses/619de91852c9cc8d9bbb2805";
+const courseUrl = "http://techvanto.herokuapp.com/allcourses";
+const instructorUrl = "http://techvanto.herokuapp.com/instructor";
+const catUrl = "http://techvanto.herokuapp.com/category";
+const coursesByCatUrl = "https://techvanto.herokuapp.com/courses";
 
 class SingleCourse extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            singleCourse:''
+            singleCourse:'',
+            instructorData:'',
+            courseCat:'',
+            coursesByCategory:''
         }
-        console.log("constructor")
     }
     render(){
-        console.log(this.state);
-        console.log("render")
-        
+        var courseDetails = this.state.singleCourse;
+        var instructorDetails = this.state.instructorData;
+        var courseCategory = this.state.courseCat;
+
         return(
             <>
-                <section class="page-heading">
-                    <div class="container">
+                <section className="page-heading">
+                    <div className="container">
                         <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="index.html" class="home">
+                            <ol className="breadcrumb">
+                                <li className="breadcrumb-item">
+                                    <Link to="/" className="home">
                                         Home
-                                        <div class="line"></div>
-                                    </a>
+                                        <div className="line"></div>
+                                    </Link>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a href="courses.html" class="home">
+                                <li className="breadcrumb-item">
+                                    <Link to="/courses" className="home">
                                         Courses
-                                        <div class="line"></div>
+                                        <div className="line"></div>
+                                    </Link>
+                                </li>
+                                <li className="breadcrumb-item">
+                                    <a href="#" className="home">
+                                        {courseCategory.category_name}
+                                        <div className="line"></div>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a href="#" class="home">
-                                        Programming Languages
-                                        <div class="line"></div>
-                                    </a>
-                                </li>
-                                <li class="breadcrumb-item active">
-                                    Angular – The Complete Guide (2020 Edition)
+                                <li className="breadcrumb-item active">
+                                    {courseDetails.sub_category_name}
                                 </li>
                             </ol>
                         </nav>
-                        <div class="my-container">
-                            <div class="course-head">
+                        <div className="my-container">
+                            <div className="course-head">
                                 <h4>
-                                    <a href="#">Programming Languages</a>
+                                    <a href="#">{courseCategory.category_name}</a>
                                 </h4>
                                 <h2>
-                                    Angular – The Complete Guide (2020 Edition)
+                                    {courseDetails.sub_category_name}
                                 </h2>
-                                <div class="instructor-info">
-                                    <div class="instr-pic">
-                                        <img src="images/instructor_1.jpg" class="img-fluid" alt="instructor-image"/>
+                                <div className="instructor-info">
+                                    <div className="instr-pic">
+                                        <img src={instructorDetails.image} className="img-fluid" alt="instructor-image"/>
                                     </div>
-                                    <div class="instr-name">
-                                        <span>Cikgu Siti Negro</span>
+                                    <div className="instr-name">
+                                        <span>{instructorDetails.name}</span>
                                     </div>
-                                    <div class="update-date">
+                                    <div className="update-date">
                                         <span>Last Update July 5, 2021</span>
                                     </div>
                                 </div>
-                                <div class="total-enrolled">
-                                    <i class="fa fa-user"></i>
+                                <div className="total-enrolled">
+                                    <i className="fa fa-user"></i>
                                     <span>3 already enrolled</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="course-detail">
-                    <div class="container">
-                        <div class="my-container row">
-                            <div class="col-lg-8 col-md-12">
+                <section className="course-detail">
+                    <div className="container">
+                        <div className="my-container row">
+                            <div className="col-lg-8 col-md-12">
 
-                                <div class="about-course">
+                                <div className="about-course">
                                     <h4>About This Course</h4>
                                     <p>
                                         From <b>Setup</b> to <b>Deployment</b>, this course covers it all! You’ll learn all about Components, Directives, 
@@ -88,78 +98,78 @@ class SingleCourse extends React.Component {
                                         Learn all the fundamentals you need to know to get started developing Angular applications right away.
                                     </p> 
                                 </div>
-                                <div class="learning-obj">
+                                <div className="learning-obj">
                                     <h4>Learning Objectives</h4>
-                                    <div class="lo-list row">
-                                        <div class="col-lg-6 col-md-6">
+                                    <div className="lo-list row">
+                                        <div className="col-lg-6 col-md-6">
                                             <p>
-                                                <span><i class="fa fa-check"></i></span>
+                                                <span><i className="fa fa-check"></i></span>
                                                 Develop modern, complex, responsive and scalable web applications with Angular 11
                                             </p>
                                             <p>
-                                                <span><i class="fa fa-check"></i></span>
+                                                <span><i className="fa fa-check"></i></span>
                                                 Use the gained, deep understanding of the Angular fundamentals to quickly establish yourself 
                                                 as a frontend developer
                                             </p>
                                         </div>
-                                        <div class="col-lg-6 col-md-6">
+                                        <div className="col-lg-6 col-md-6">
                                             <p>
-                                                <span><i class="fa fa-check"></i></span>
+                                                <span><i className="fa fa-check"></i></span>
                                                 Fully understand the architecture behind an Angular application and how to use it
                                             </p>
                                             <p>
-                                                <span><i class="fa fa-check"></i></span>
+                                                <span><i className="fa fa-check"></i></span>
                                                 Create single-page applications with one of the most modern JavaScript frameworks out there
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="requirements">
+                                <div className="requirements">
                                     <h4>Requirements</h4>
                                     <ul>
                                         <li>
-                                            <span><i class="fa fa-check"></i></span>
+                                            <span><i className="fa fa-check"></i></span>
                                             <span>NO Angular 1 or Angular 2 knowledge is required!</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa fa-check"></i></span>
+                                            <span><i className="fa fa-check"></i></span>
                                             <span>Basic HTML and CSS knowledge helps, but isn't a must-have</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa fa-check"></i></span>
+                                            <span><i className="fa fa-check"></i></span>
                                             <span>Prior TypeScript knowledge also helps but isn't necessary to benefit from this course</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa fa-check"></i></span>
+                                            <span><i className="fa fa-check"></i></span>
                                             <span>Basic JavaScript knowledge is required</span>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="target-audience">
+                                <div className="target-audience">
                                     <h4>Target Audience</h4>
                                     <ul>
                                         <li>
-                                            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+                                            <span><i className="fas fa-long-arrow-alt-right"></i></span>
                                             <span>
                                                 Newcomer as well as experienced frontend developers interested in learning a modern 
                                                 JavaScript framework
                                             </span>
                                             </li>
                                         <li>
-                                            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+                                            <span><i className="fas fa-long-arrow-alt-right"></i></span>
                                             <span>
                                                 This course is for everyone interested in learning a state-of-the-art frontend JavaScript 
                                                 framework
                                             </span>
                                         </li>
                                         <li>
-                                            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+                                            <span><i className="fas fa-long-arrow-alt-right"></i></span>
                                             <span>
                                                 Prior TypeScript knowledge also helps but isn't necessary to benefit from this course
                                             </span>
                                         </li>
                                         <li>
-                                            <span><i class="fas fa-long-arrow-alt-right"></i></span>
+                                            <span><i className="fas fa-long-arrow-alt-right"></i></span>
                                             <span>
                                                 Taking this course will enable you to be amongst the first to gain a very solid understanding 
                                                 of Angular
@@ -167,57 +177,57 @@ class SingleCourse extends React.Component {
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="curriculum">
-                                    <div class="header">
+                                <div className="curriculum">
+                                    <div className="header">
                                         <h4>Curriculum</h4>
                                         <div>
                                             <p>6 Lessons</p>
                                             <p>32h 45m</p>
                                         </div>
                                     </div>
-                                    <div class="cu-list">
-                                        <div class="accordion">
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header">
-                                                    <button type="button" class="accordion-button" data-bs-toggle="collapse" 
+                                    <div className="cu-list">
+                                        <div className="accordion">
+                                            <div className="accordion-item">
+                                                <h2 className="accordion-header">
+                                                    <button type="button" className="accordion-button" data-bs-toggle="collapse" 
                                                     data-bs-target="#basic">
-                                                        <span class="minus active"><i class="fas fa-minus"></i></span>
-                                                        <span class="plus active"><i class="fas fa-plus"></i></span>
+                                                        <span className="minus active"><i className="fas fa-minus"></i></span>
+                                                        <span className="plus active"><i className="fas fa-plus"></i></span>
                                                         The Basics
                                                 </button>
                                                 </h2>
-                                                <div id="basic" class="accordion-collapse collapse show">
-                                                    <div class="accordion-body">
+                                                <div id="basic" className="accordion-collapse collapse show">
+                                                    <div className="accordion-body">
                                                         hiiiii
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header">
-                                                    <button type="button" class="accordion-button" data-bs-toggle="collapse" 
+                                            <div className="accordion-item">
+                                                <h2 className="accordion-header">
+                                                    <button type="button" className="accordion-button" data-bs-toggle="collapse" 
                                                     data-bs-target="#project">
-                                                        <span class="minus"><i class="fas fa-minus"></i></span>
-                                                        <span class="plus"><i class="fas fa-plus"></i></span>
+                                                        <span className="minus"><i className="fas fa-minus"></i></span>
+                                                        <span className="plus"><i className="fas fa-plus"></i></span>
                                                         Course Project - Components & Databinding
                                                 </button>
                                                 </h2>
-                                                <div id="project" class="accordion-collapse collapse">
-                                                    <div class="accordion-body">
+                                                <div id="project" className="accordion-collapse collapse">
+                                                    <div className="accordion-body">
                                                         hiiiii
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header">
-                                                    <button type="button" class="accordion-button" data-bs-toggle="collapse" 
+                                            <div className="accordion-item">
+                                                <h2 className="accordion-header">
+                                                    <button type="button" className="accordion-button" data-bs-toggle="collapse" 
                                                     data-bs-target="#services">
-                                                        <span class="minus"><i class="fas fa-minus"></i></span>
-                                                        <span class="plus"><i class="fas fa-plus"></i></span>
+                                                        <span className="minus"><i className="fas fa-minus"></i></span>
+                                                        <span className="plus"><i className="fas fa-plus"></i></span>
                                                         Using Services & Dependency Injection
                                                 </button>
                                                 </h2>
-                                                <div id="services" class="accordion-collapse collapse">
-                                                    <div class="accordion-body">
+                                                <div id="services" className="accordion-collapse collapse">
+                                                    <div className="accordion-body">
                                                         hiiiii
                                                     </div>
                                                 </div>
@@ -226,122 +236,122 @@ class SingleCourse extends React.Component {
                                     </div>
                                     
                                 </div>
-                                <div class="instructor">
+                                <div className="instructor">
                                     <h4>Your Instructor</h4>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-4 small-col-4">
-                                            <div class="instr-image">
-                                                <img src="images/instructor_1.jpg" class="img-fluid" alt="instr-image"/>
+                                    <div className="row">
+                                        <div className="col-lg-4 col-md-4 col-sm-4 small-col-4">
+                                            <div className="instr-image">
+                                                <img src={instructorDetails.image} className="img-fluid" alt="instr-image"/>
                                             </div>
                                         </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8 small-col-8">
-                                            <div class="instr-name">
-                                                Cikgu Siti Negro
+                                        <div className="col-lg-8 col-md-8 col-sm-8 small-col-8">
+                                            <div className="instr-name">
+                                                {instructorDetails.name}
                                             </div>
-                                            <div class="instr-rating">
+                                            <div className="instr-rating">
                                                 <span>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
+                                                    <i className="fa fa-star"></i>
+                                                    <i className="fa fa-star"></i>
+                                                    <i className="fa fa-star"></i>
+                                                    <i className="fa fa-star"></i>
+                                                    <i className="fa fa-star"></i>
                                                 </span>
-                                                <span>3.75</span>
+                                                <span>{instructorDetails.rating}</span>
                                                 <span>/5</span>
                                             </div>
-                                            <div class="instr-other-details">
-                                                <div class="other-details">
-                                                    <i class="far fa-play-circle"></i>
-                                                    <span>3 Courses</span>
+                                            <div className="instr-other-details">
+                                                <div className="other-details">
+                                                    <i className="far fa-play-circle"></i>
+                                                    <span>{instructorDetails.number_of_courses} Courses</span>
                                                 </div>
-                                                <div class="other-details">
-                                                    <i class="far fa-comment-alt"></i>
-                                                    <span>8 Reviews</span>
+                                                <div className="other-details">
+                                                    <i className="far fa-comment-alt"></i>
+                                                    <span>{instructorDetails.reviews} Reviews</span>
                                                 </div>
-                                                <div class="other-details">
-                                                    <i class="far fa-user"></i>
-                                                    <span>133 Students</span>
+                                                <div className="other-details">
+                                                    <i className="far fa-user"></i>
+                                                    <span>{instructorDetails.number_of_students} Students</span>
                                                 </div>
                                             </div>
-                                            <div class="instr-about">
-                                                Abbs is one of the top bca colleges in bangalore. ABBS BCA program has an excellent group 
-                                                of dedicated faculty & experts from the IT industry, guiding the students
+                                            <div className="instr-about">
+                                                {instructorDetails.description}
                                                 <a href="#">
-                                                    <i class="fa fa-plus"></i>
+                                                    <i className="fa fa-plus"></i>
                                                     <span>See more</span>
                                                 </a>   
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="instr-review">
+                                    <div className="instr-review">
                                         <h4>Write a review</h4>
                                         <button type="button">Write a review</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-12">
-                                <div class="video-box">
-                                    <div class="video">
-                                        <iframe src="https://www.youtube.com/embed/oOm66m59jLc" 
+                            <div className="col-lg-4 col-md-12">
+                                <div className="video-box">
+                                    <div className="video">
+                                        <img src={courseDetails.image} className="img-fluid" />
+                                        {/* <iframe src="https://www.youtube.com/embed/oOm66m59jLc" 
                                             title="YouTube video player" frameborder="0" 
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                             allowfullscreen>
-                                        </iframe>
+                                        </iframe> */}
                                     </div>
-                                    <div class="course-detail">
-                                        <div class="course-price">
-                                            <span>$49</span>
+                                    <div className="course-detail">
+                                        <div className="course-price">
+                                            <span><i classNameName="fas fa-rupee-sign"></i> {courseDetails.price}</span>
                                             <span>.99</span>
                                         </div>
-                                        <div class="other">
+                                        <div className="other">
                                             <p>
-                                                <span class="icon"><i class="fas fa-sliders-h"></i></span>
-                                                <span class="heading">Level</span>
+                                                <span className="icon"><i className="fas fa-sliders-h"></i></span>
+                                                <span className="heading">Level</span>
                                             </p>
-                                            <p class="sub-heading">
-                                                Beginner
+                                            <p className="sub-heading">
+                                                {courseDetails.level}
                                             </p>    
                                         </div> 
-                                        <div class="other">
+                                        <div className="other">
                                             <p>
-                                                <span class="icon"><i class="far fa-clock"></i></span>
-                                                <span class="heading">Duration</span>
+                                                <span className="icon"><i className="far fa-clock"></i></span>
+                                                <span className="heading">Duration</span>
                                             </p>
-                                            <p class="sub-heading">
+                                            <p className="sub-heading">
                                                 32.8 hours
                                             </p>    
                                         </div>   
-                                        <div class="other">
+                                        <div className="other">
                                             <p>
-                                                <span class="icon"><i class="far fa-play-circle"></i></span>
-                                                <span class="heading">Lectures</span>
+                                                <span className="icon"><i className="far fa-play-circle"></i></span>
+                                                <span className="heading">Lectures</span>
                                             </p>
-                                            <p class="sub-heading">
+                                            <p className="sub-heading">
                                                 6 Lectures
                                             </p>   
                                         </div> 
-                                        <div class="other">
+                                        <div className="other">
                                             <p>
-                                                <span class="icon"><i class="fas fa-tag"></i></span>
-                                                <span class="heading">Subject</span>
+                                                <span className="icon"><i className="fas fa-tag"></i></span>
+                                                <span className="heading">Subject</span>
                                             </p>
-                                            <p class="sub-heading">
+                                            <p className="sub-heading">
                                                 Programming Language
                                             </p>    
                                         </div>     
-                                        <div class="other">
+                                        <div className="other">
                                             <p>
-                                                <span class="icon"><i class="fas fa-globe"></i></span>
-                                                <span class="heading">Language</span>
+                                                <span className="icon"><i className="fas fa-globe"></i></span>
+                                                <span className="heading">Language</span>
                                             </p>
-                                            <p class="sub-heading">
+                                            <p className="sub-heading">
                                                 Russian
                                             </p>    
                                         </div> 
                                         <div> 
                                             <button type="button">
                                                 <span>
-                                                    <i class="fas fa-shopping-cart"></i>
+                                                    <i className="fas fa-shopping-cart"></i>
                                                 </span>
                                                 Add to cart
                                             </button>
@@ -349,33 +359,9 @@ class SingleCourse extends React.Component {
                                                 Add to wishlist
                                             </button>
                                         </div>
-                                        <div class="social-media">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="fab fa-facebook-f"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="fab fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="fab fa-linkedin-in"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="fab fa-youtube"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="category-box">
+                                <div className="category-box">
                                     <h4>Course categories</h4>
                                     <ul>
                                         <li>
@@ -440,32 +426,9 @@ class SingleCourse extends React.Component {
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="related-course">
+                                <div className="related-course">
                                     <h4>Related Courses</h4>
-                                    <div class="course-box">
-                                        <a href="#">
-                                            <img src="images/course_img_1.jpg"/>
-                                        </a>  
-                                        <div class="detail">
-                                            <a href="#" class="title">Learn Python Programming...</a>
-                                            <div>
-                                                <span>$79</span>
-                                                <span>.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="course-box">
-                                        <a href="#">
-                                            <img src="images/course_img_2.jpg"/>
-                                        </a>  
-                                        <div class="detail">
-                                            <a href="#" class="title">C# Basic For Beginners & Intermediate</a>
-                                            <div>
-                                                <span>$79</span>
-                                                <span>.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <RelatedCourses relatedCoursesData={this.state.coursesByCategory}/>
                                 </div>
                             </div>
                         </div>
@@ -476,12 +439,34 @@ class SingleCourse extends React.Component {
     }
 
     componentDidMount(){
-        console.log("mount")
-        fetch(url, {method:'GET'})
+        var courseId = this.props.match.params.id;
+        //get course by course id
+        fetch(`${courseUrl}/${courseId}`, {method:'GET'})
         .then((res)=>res.json())
         .then((data)=>{
-            this.setState({singleCourse:data[0]})
+            this.setState({singleCourse:data[0]});
+
+            //get category of course
+            axios.get(`${catUrl}/${data[0].category_id}`, {method:'GET'})
+            .then((cat) => {
+                this.setState({courseCat:cat.data[0]})
+            })
+
+            //get courses with respect to category id (for related courses) 
+            axios.get(`${coursesByCatUrl}/${data[0].category_id}?limit_value=2`,
+            {method: 'GET'}).then((catCourses) => {
+                this.setState({
+                    coursesByCategory:catCourses.data
+                })
+            })
         })
+        //get instructor details of course by course Id
+        fetch(`${instructorUrl}/${courseId}`, {method:'GET'})
+        .then((res)=>res.json())
+        .then((data)=>{
+            this.setState({instructorData:data})
+        })
+        
     }
 }
 export default SingleCourse;

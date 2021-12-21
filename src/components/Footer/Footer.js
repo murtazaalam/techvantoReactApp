@@ -1,14 +1,15 @@
 import React from 'react';
+import './footer.css';
 
 class Footer extends React.Component {
     render() {
         return (
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <div class="f-section">
-                                <h4 class="f-heading">About</h4>
+            <footer className="footer">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-3 col-md-3 col-sm-12">
+                            <div className="f-section">
+                                <h4 className="f-heading">About</h4>
                                 <ul>
                                     <li>
                                         <a href="#">About Us</a>      
@@ -28,9 +29,9 @@ class Footer extends React.Component {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <div class="f-section">
-                                <h4 class="f-heading">Links</h4>
+                        <div className="col-lg-3 col-md-3 col-sm-12">
+                            <div className="f-section">
+                                <h4 className="f-heading">Links</h4>
                                 <ul>
                                     <li>
                                         <a href="blogs.html">News & Blogs</a>
@@ -53,9 +54,9 @@ class Footer extends React.Component {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <div class="f-section">
-                                <h4 class="f-heading">Support</h4>
+                        <div className="col-lg-3 col-md-3 col-sm-12">
+                            <div className="f-section">
+                                <h4 className="f-heading">Support</h4>
                                 <ul>
                                     <li>
                                         <a href="#">Documentation</a>
@@ -72,26 +73,26 @@ class Footer extends React.Component {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <div class="tnc">
-                                <img src="images/logo_2.png" width="120" class="img-fluid" />
-                                <div class="social-media">
+                        <div className="col-lg-3 col-md-3 col-sm-12">
+                            <div className="tnc">
+                                <img src="images/logo_2.png" width="120" className="img-fluid" />
+                                <div className="social-media">
                                     <a href="#">
-                                        <i class="fab fa-twitter"></i>
+                                        <i className="fab fa-twitter"></i>
                                     </a>
                                     <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
+                                        <i className="fab fa-facebook-f"></i>
                                     </a>
                                     <a href="#">
-                                        <i class="fab fa-linkedin-in"></i>
+                                        <i className="fab fa-linkedin-in"></i>
                                     </a>
                                     <a href="#">
-                                        <i class="fab fa-youtube"></i>
+                                        <i className="fab fa-youtube"></i>
                                     </a>
                                 </div>
                                 <p>&copy; 2021 Techvanto. All rights reserved.</p>
-                                <div class="links">
-                                    <span class=""><a href="#">Terms of Use</a></span>
+                                <div className="links">
+                                    <span><a href="#">Terms of Use</a></span>
                                     <span><a href="#">Privacy Policy</a></span>
                                 </div>
                             </div>

@@ -6,7 +6,7 @@ const StudentsViewDisplay = (props) => {
         if(allCoursesData){
             return allCoursesData.map((item) => {
                 return(
-                    <div className="col-lg-2 col-md-4 course-card">
+                    <div className="col-lg-2 col-md-4 course-card" key={item._id}>
                         <div className="course-item">
                             <div className="image">
                                 <Link to={`course/${item._id}`} key={item._id}>
@@ -22,7 +22,7 @@ const StudentsViewDisplay = (props) => {
                             </h3>
                             <p className="text">Trainer Name : <b>{item.trainer_name}</b></p>
                             <span className="price">
-                                <i className="fas fa-rupee-sign"></i>{item.price}.<span className="decimal">99</span>
+                                <i className="fas fa-rupee-sign"></i>&nbsp;{item.price}.<span className="decimal">00</span>
                             </span>
                             <div className="rating">
                                 <span className="star-icon">

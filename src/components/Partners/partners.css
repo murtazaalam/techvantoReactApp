@@ -1,0 +1,49 @@
+.partners .container{
+    background: #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.partners .text .heading h3{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 36px;
+    position: relative;
+}
+.partners .text p{
+    color: #696969;
+    margin-bottom: 36px;
+}
+.partners .text .heading h3::after{
+    content: "";
+    height: 12px;
+    width: 91px;
+    position: absolute;
+    background-image: url("https://i.ibb.co/3dk1XsZ/headline-curve.png");
+    bottom: -10px;
+    left: 56px;
+}
+.partners .text button{
+    background: #fadddd;
+    border: none;
+    padding: 0 36px;
+    min-height: 50px;
+    border-radius: 5px;
+    color: var(--red);
+    transition: 0.3s;
+    font-weight: 600;
+}
+.partners .text button:hover{
+    background: var(--red);
+    color: #fff;
+}
+.partners .col-xs-6{
+    text-align: center;
+}
+.partners .col-xs-6 img{
+    margin: 20px 0;
+}
+@media screen and (max-width: 767px){
+    .partners .col-xs-6{
+        width: 50%;
+    }
+}

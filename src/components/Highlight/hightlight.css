@@ -1,0 +1,17 @@
+.highlights .container{
+    background: var(--red);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.highlights-content{
+    text-align: center;
+}
+.highlights-content .icon img{
+    width: 60px;
+}
+.highlights-content .text{
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 0px;
+
+}

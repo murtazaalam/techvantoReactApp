@@ -1,0 +1,649 @@
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+const AllCourses = () => {
+    return(
+        <>
+            <section className="page-heading">
+                <div className="container">
+                    <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item">
+                                <Link to="/" className="home">
+                                    Home
+                                    <div className="line"></div>
+                                </Link>
+                            </li>
+                            <li className="breadcrumb-item active">
+                                Courses
+                            </li>
+                        </ol>
+                    </nav>
+                    <h1>Courses</h1>
+                </div>
+            </section>
+            <section className="courses-area">
+                <div className="container">
+                    <div className="row row-area">
+                        <div className="col-lg-3 col-md-3">
+                            <div className="filter-area">
+                                <div className="category-by">
+                                    <h4>Filter by category</h4>
+                                    <ul>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Art & Design(8)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Business(10)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Data Science(7)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Development(10)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Finance(7)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Health & Fitness(9)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Lifestyle(9)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Marketing(9)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Music(9)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Personal Development(9)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Photography(9)</label>
+                                        </li>
+                                        <li> 
+                                            <input type="checkbox" className="form-check-input"/>
+                                            <label className="form-check-label">Teaching & Academics(9)</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="filter-by-all">
+                                    <h4>Filter by</h4>
+                                    <div className="instructor-by">
+                                        <h5>INSTRUTOR</h5>
+                                        <ul>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Art & Design(8)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Business(10)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Data Science(7)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Development(10)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Finance(7)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Health & Fitness(9)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Lifestyle(9)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Marketing(9)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Music(9)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Personal Development(9)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Photography(9)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Teaching & Academics(9)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="price-by">
+                                        <h5>Price</h5>
+                                        <ul>
+                                            <li> 
+                                                <input type="radio" className="form-check-input"/>
+                                                <label className="form-check-label">All(98)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="radio" className="form-check-input"/>
+                                                <label className="form-check-label">Free(9)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="radio" className="form-check-input"/>
+                                                <label className="form-check-label">Paid(89)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="level-by">
+                                        <h5>Level</h5>
+                                        <ul>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">All Levels(13)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Beginners(2)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Intermediate(7)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Expert(4)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="language-by">
+                                        <h5>Language</h5>
+                                        <ul>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">English(13)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">French(2)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Italian(7)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Japanese(4)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="rating-by">
+                                        <h5>Rating</h5>
+                                        <ul>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <span>(16)</span>
+                                                </label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <span>(10)</span>
+                                                </label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <span>(5)</span>
+                                                </label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <span>(0)</span>
+                                                </label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">
+                                                    <i className="fas fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <i className="far fa-star"></i>
+                                                    <span>(0)</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="duration-by">
+                                        <h5>Duration</h5>
+                                        <ul>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">Less than 2 hours (58)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">3 to 6 hours (5)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">7 to 16 hours (9)</label>
+                                            </li>
+                                            <li> 
+                                                <input type="checkbox" className="form-check-input"/>
+                                                <label className="form-check-label">17+ hours (26)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-9 col-md-9">
+                            <div className="top-filter">
+                                <p>We found <span>98</span> courses available for you</p>
+                                <div className="filter">
+                                    <span>See</span>
+                                    <span className="active-menu"><i className="fa fa-th"></i></span>
+                                    <span className=""><i className="fas fa-bars"></i></span>
+                                    <span>
+                                        <a href="#">
+                                            <i className="fas fa-filter"></i>
+                                            Filter
+                                            <i className="fas fa-chevron-down marginLeft14"></i>
+                                        </a>
+                                        
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="row marginTop24">
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/excel_training.jpeg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div className="course-item">
+                                        <div className="image">
+                                            <img src="images/student_view_section_img_1.jpg" className="img-fluid" />
+                                        </div>
+                                        
+                                        <button className="level-badge">Beginner</button>
+                                        <h3 className="title">
+                                            <a href="#">
+                                                Angular - The Complete Guide (2020 Edition)
+                                            </a>
+                                        </h3>
+                                        <p className="text">Sub title here</p>
+                                        <span className="price">$49.<span className="decimal">99</span></span>
+                                        <div className="rating">
+                                            <span className="star-icon">
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                                <i className="fas fa-star" style={{color: '#ccc'}}></i>
+                                            </span>
+                                            <span className="total-rating">(4)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="page">
+                                <ul className="pagination">
+                                    <li className="page-item active">
+                                        <span className="page-link">1</span>
+                                    </li>
+                                    <li className="page-item">
+                                        <span className="page-link">
+                                            <a href="#">2</a>
+                                        </span>
+                                    </li>
+                                    <li className="page-item">
+                                        <span className="page-link">
+                                            ...
+                                        </span>
+                                    </li>
+                                    <li className="page-item">
+                                        <span className="page-link">
+                                            <a href="#">7</a>
+                                        </span>
+                                    </li>
+                                    <li className="page-item">
+                                        <span className="page-link">
+                                            <a href="#">
+                                                <i className="fas fa-angle-double-right"></i>
+                                            </a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    )
+}
+export default AllCourses;

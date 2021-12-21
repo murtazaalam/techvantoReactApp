@@ -1,0 +1,90 @@
+.start-to-success .search-field{
+    max-width: 600px;
+    position: relative;
+    margin: 25px 0 0 0;
+    margin-top: 40px;
+}
+.start-to-success .search-field input{
+    height: 68px;
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    padding-right: 60px;
+    padding-left: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+.start-to-success .search-field input:focus{
+    border-color: #88797a;
+}
+.start-to-success .search-field button{
+    position: absolute;
+    background: #fff;
+    border: none;
+    right: 15px;
+    top: 29%;
+    color: #cf202d;
+    font-size: 20px;
+}
+.start-to-success .container{
+    padding-top: 50px;
+}
+.start-to-success .inner-content{
+    align-items: center;
+    padding: 0 0 60px 15px;
+}
+.success-text h3{
+    color: var(--red);
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    line-height: 1.74;
+}
+.page-title h2{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.page-title h2 mark{
+    color: var(--red);
+    background: inherit;
+    position: relative;
+    z-index: -1;
+}
+.page-title h2 mark::after{
+    content: "";
+    position: absolute;
+    width: 91px;
+    height: 12px;
+    left: 0;
+    z-index: -1;
+    bottom: -4px;
+    background: url("https://i.ibb.co/3dk1XsZ/headline-curve.png");
+}
+.page-sub-title{
+    color: #696969;
+    margin-top: 23px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.image-field{
+    text-align: end;
+    margin-top: 28px;
+    position: relative;
+    z-index: -1;
+}
+@media screen and (min-width: 768px){
+    .success-text h3{
+        margin-bottom: 20px;
+    }
+    .page-title h2{
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+    .image-field{
+        margin-top: 0px;
+    }
+}
