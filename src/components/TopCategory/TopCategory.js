@@ -10,6 +10,7 @@ class TopCategory extends React.Component {
         }
     }
     render() {
+        
         return (
             <section className="top-category">
                 <div className="container">

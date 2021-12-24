@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import RelatedCourses from './RelatedCourses';
 import './singleCourse.css';
+import CategoryDisplay from '../Header/CategoryDisplay';
 
 const courseUrl = "http://techvanto.herokuapp.com/allcourses";
 const instructorUrl = "http://techvanto.herokuapp.com/instructor";
@@ -16,14 +17,17 @@ class SingleCourse extends React.Component {
             singleCourse:'',
             instructorData:'',
             courseCat:'',
-            coursesByCategory:''
+            coursesByCategory:'',
+            newCourseId:'',
+            allCat:''
         }
     }
+
     render(){
         var courseDetails = this.state.singleCourse;
         var instructorDetails = this.state.instructorData;
         var courseCategory = this.state.courseCat;
-
+        console.log("all",this.state.allCat);
         return(
             <>
                 <section className="page-heading">
@@ -300,8 +304,8 @@ class SingleCourse extends React.Component {
                                     </div>
                                     <div className="course-detail">
                                         <div className="course-price">
-                                            <span><i classNameName="fas fa-rupee-sign"></i> {courseDetails.price}</span>
-                                            <span>.99</span>
+                                            <span><i className="fas fa-rupee-sign"></i> {courseDetails.price}</span>
+                                            <span>.00</span>
                                         </div>
                                         <div className="other">
                                             <p>
@@ -364,66 +368,7 @@ class SingleCourse extends React.Component {
                                 <div className="category-box">
                                     <h4>Course categories</h4>
                                     <ul>
-                                        <li>
-                                            <a href="#">
-                                                Art & Design
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Business
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Data Science
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Development
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Finance
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Health & Fitness
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Lifestyle
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Marketing
-                                            </a>
-                                        </li>
-                                            <li>
-                                            <a href="#">
-                                                Music
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Personal Development
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Photography
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Teaching & Academics 
-                                            </a>
-                                        </li>
+                                        <CategoryDisplay allCategories={this.state.allCat} />
                                     </ul>
                                 </div>
                                 <div className="related-course">
@@ -440,6 +385,7 @@ class SingleCourse extends React.Component {
 
     componentDidMount(){
         var courseId = this.props.match.params.id;
+        this.setState({newCourseId:courseId})
         //get course by course id
         fetch(`${courseUrl}/${courseId}`, {method:'GET'})
         .then((res)=>res.json())
@@ -466,7 +412,17 @@ class SingleCourse extends React.Component {
         .then((data)=>{
             this.setState({instructorData:data})
         })
-        
+
+        axios.get(catUrl, {method:'GET'})
+        .then((res) => {
+            this.setState({allCat:res.data})
+        })
+    }
+
+    componentDidUpdate(){
+        if(this.state.newCourseId != this.props.match.params.id){
+            this.componentDidMount();
+        }
     }
 }
 export default SingleCourse;

@@ -1,17 +1,23 @@
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 import './header.css';
+import CategoryDisplay from './CategoryDisplay';
+
+const catUrl = "http://techvanto.herokuapp.com/category";
 
 class Header extends React.Component {
     constructor() {
         super();
+        this.state={
+            catData:''
+        }
     }
     sideMenu = () => {
         console.log("helloooooo");
     }
     render() {
         return (
-            
             <header id="navbar-top" className="header-box">
                 <div className="page-top-bar">
                     <div className="container">
@@ -32,18 +38,15 @@ class Header extends React.Component {
                             </Link>
                             <div className="category-menu">
                                 <a href="#" className="">
-                                    <div className="dots-icon">
-                                        <i className="fa fa-th"></i>
+                                    <div className="cat-text">
+                                        <div className="dots-icon">
+                                            <i className="fa fa-th"></i>
+                                        </div>
+                                        <div className="text">Category</div>
                                     </div>
-                                    <div className="text">Category</div>
-                                    <nav className="category-list">
-                                        <ul>
-                                            <li>list 1</li>
-                                            <li>list 2</li>
-                                            <li>list 3</li>
-                                            <li>list 4</li>
-                                        </ul>
-                                    </nav>
+                                    <ul className="category-list">
+                                        <CategoryDisplay allCategories={this.state.catData} />
+                                    </ul>
                                 </a>        
                             </div>
                         </div>
@@ -104,7 +107,7 @@ class Header extends React.Component {
                             </div>
                             <div className="mobile-menu">
                                 <div className="open-item menu-bar">
-                                    <a href="#" onClick={this.sideMenu()}>
+                                    <a href="#" onClick={() => this.sideMenu()}>
                                         <i className="fa fa-bars"></i>
                                     </a>
                                 </div>
@@ -114,6 +117,13 @@ class Header extends React.Component {
                 </div>
             </header>
         )
+ 
+    }
+    componentDidMount(){
+        axios.get(catUrl, {method: 'GET'})
+        .then((res) => {
+            this.setState({catData: res.data})
+        })
     }
 }
 

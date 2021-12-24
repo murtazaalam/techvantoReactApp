@@ -1,17 +1,24 @@
 import React from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-const RelatedCourses = (props) => {
-    const renderCourses = ({relatedCoursesData}) => {
+const url = "http://techvanto.herokuapp.com/allcourses";
+
+class RelatedCourses extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    
+    renderCourses = ({relatedCoursesData}) => {
         if(relatedCoursesData){
             return relatedCoursesData.map((item) => {
                 return(
                     <div className="course-box">
-                        <Link to={`course/${item._id}`} key={item._id}>
+                        <Link to={`/course/${item._id}`} key={item._id}>
                             <img src={item.image} className="img-fluid" width="112"/>
                         </Link>  
                         <div className="detail">
-                            <Link to={`${item._id}`} key={item._id} class="title">
+                            <Link to={`/course/${item._id}`} key={item._id} class="title">
                                 {item.sub_category_name}
                             </Link>
                             <div>
@@ -23,12 +30,14 @@ const RelatedCourses = (props) => {
                 )
             })
         }
-
     }
-    return (
-        <>
-            {renderCourses(props)}
-        </>
-    )
+    render(){
+        return (
+            <>
+                {this.renderCourses(this.props)}
+            </>
+        )
+    }
+    
 }
 export default RelatedCourses;

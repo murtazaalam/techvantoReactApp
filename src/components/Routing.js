@@ -5,6 +5,7 @@ import Footer from "./Footer/Footer";
 import SingleCourse from './SingleCourse/SingleCourse';
 import Home from "./Home";
 import AllCourses from "./AllCourses/AllCourses";
+import SingleCat from "./SingleCat/SingleCat";
 
 const Routing = () => {
     return (
@@ -14,6 +15,7 @@ const Routing = () => {
                     <Route exact path="/" component={Home}></Route>
                     <Route path="/course/:id" component={SingleCourse}></Route>
                     <Route path="/courses" component={AllCourses}></Route>
+                    <Route path="/category/:id" component={SingleCat}></Route>
                 <Footer/>
             </BrowserRouter>
         </>
