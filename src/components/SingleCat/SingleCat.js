@@ -1,9 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './singleCat.css';
+import Header from '../Header/Header';
 
 const SingleCat = () => {
     return (
         <>
+            <Header/>
             <section className="page-heading">
                 <div className="container">
                     <nav aria-label="breadcrumb">

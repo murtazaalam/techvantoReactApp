@@ -32,54 +32,7 @@ header{
     overflow: hidden;
     max-width: 100% !important;
 }
-.user::before{
-    content: "";
-    position: absolute;
-    height: 40px;
-    width: 1px;
-    background: #d9dee3;
-    left: 9%;
-}
-.user{
-    display: flex;
-    margin-left: 10px;
-    padding-left: 20px;
-    align-items: center;
-}
-.user .login a{
-    position: relative;
-    padding: 6px 0px;
-    color: #696969;
-    text-decoration: none;
-    margin: 0px 12px;
-    transition: 0.3s;
-}
-.user .login a:hover{
-    color: var(--red);
-}
-.user .login a:hover .moving-line{
-    width: 100%;
-}
-.user .sign-up{
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-}
-.user .sign-up .sign-up-btn{
-    padding: 0 28px;
-    min-height: 48px;
-    background: #fadddd;
-    color: var(--red);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-.user .sign-up .sign-up-btn:hover{
-    background: var(--red);
-    color: #fff;
-}
+
 .demo-content{
     display: none;
     top: 14px;
@@ -122,154 +75,16 @@ header{
     left: -10%;
 }
 
-.top-category .container{
-    padding-top: 70px;
-    background: #fff;
-}
-.top-category .heading h3{
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 40px;
-    position: relative;
-}
-.top-category .category-box .icon{
-    font-size: 24px;
-    margin-right: 40px;
-}
-.top-category .heading h3::after{
-    content: "";
-    height: 12px;
-    width: 91px;
-    position: absolute;
-    background-image: url(../images/headline-curve.svg);
-    bottom: -15px;
-    left: 88px;
-}
-.top-category .category-box{
-    width: 100%;
-    height: 72px;
-    background: #fadddd;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    padding-left: 10%;
-    align-items: center;
-    transition: 0.3s;
-}
-.top-category .category-box{
-    font-weight: 600;
-}
-.top-category .category-box:hover{
-    background: var(--red);
-    color: #fff;
-}
-
-.student-view .container{
-    padding-top: 28px;
-    background: #fff;
-    padding-bottom: 25px;
-}
-.student-view .heading h3{
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 40px;
-    position: relative;
-}
-.student-view-tabs, .tab-content{
-    display: none;
-}
-.accordion-body{
-    padding: 32px 0 20px 0;
-}
-.accordion-body img{
-    border-radius: 4px;
-}
-.student-view .student-view-tabs ul{
-    border: none;
-}
-.student-view .student-view-tabs ul li button{
-    border: none;
-    font-size: 14px;
-    line-height: 26px;
-    padding: 7px 26px;
-    border-radius: 3px;
-    color: #696969;
-    transition: 0.3s;
-}
-.student-view .student-view-tabs ul li button.active{
-    color: var(--red);
-    box-shadow: 0 6px 25px rgb(0 0 0 / 10%);
-}
-.student-view .student-view-tabs ul li button:hover{
-    box-shadow: 0 6px 25px rgb(0 0 0 / 10%);
-}
-.student-view .student-view-tabs ul li button:active{
-    color: var(--red);
-    box-shadow: 0 6px 25px rgb(0 0 0 / 10%);
-}
-.student-view .heading h3::after{
-    content: "";
-    height: 12px;
-    width: 91px;
-    position: absolute;
-    background-image: url(../images/headline-curve.svg);
-    bottom: -14px;
-    left: 200px;
-}
-.tab-content{
-    padding-top: 44px;
-}
 .links span:last-child{
     margin-left: 15px;
 }
-.courses-area .top-filter p{
-    font-size: 15px;
-    color: #7e7e7e;
-    font-weight: 500;
-    margin-bottom: 24px;
-}
-.courses-area .filter span:last-child a{
-    padding: 12px 24px;
-    background: #ededed;
-    font-size: 15px;
-    text-decoration: none;
-    font-weight: 700;
-    color: var(--red);
-    border-radius: 4px;
-}
-.courses-area .filter span:nth-last-child(2){
-    padding: 2px 8px;
-    cursor: pointer;
-    color: #ababab;
-}
-.courses-area .filter span:nth-last-child(3){
-    padding: 2px 8px;
-    cursor: pointer;
-    color: #ababab;
-}
-.courses-area .filter span:first-child{
-    display: none;
-    color: #252525;
-    margin-right: 7px;
-    font-weight: 500;
-}
+
 .active-menu{
     border-radius: 3px;
     border: 1px solid var(--red);
     color: var(--red) !important;
 }
-.courses-area .top-filter{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    padding: 28px 0px;
-}
-.courses-area .top-filter p span{
-    color: #252525;
-    font-weight: 700;
-}
+
 .page ul{
     justify-content: center;
 }
@@ -348,234 +163,6 @@ header{
 .empty-cart-area button:hover{
     background: #ffc221;
     color: #031f42;
-}
-.cart-area{
-    background: #fff;
-    padding-top: 60px;
-}
-.cart-area .product-table thead tr{
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    display: none;
-}
-.cart-area .product-table tr{
-    border: 1px solid #eee;
-}
-.cart-area .product-table tr th:first-child,
-.cart-area .product-table tr td:first-child{
-    padding-left: 30px;
-}
-.cart-area .product-table tr th{
-    padding: 12px 10px 12px 0;
-    font-size: 14px;
-    background: #f8f8f8;
-    border: none;
-    color: #252525;
-}
-.cart-area .product-table tr td{
-    padding: 12px 10px 12px 0;
-    font-size: 14px;
-    color: #252525;
-    vertical-align: middle;
-    text-align: left;
-}
-.cart-area .product-table tr td input{
-    padding: 2px 2px 2px 50px;
-    width: 110px;
-    outline: none;
-    border: none;
-    background: #f5f5f5;
-    min-height: 40px;
-    border-radius: 5px;
-    font-weight: 700;
-}
-.cart-area .product-table tr td .remove-item span{
-    padding: 5px 0;
-    font-size: 15px;
-    font-weight: 700;
-    color: #696969;
-    cursor: pointer;
-    position: relative;
-    transition: 0.3s;
-}
-.cart-area .product-table tr td .remove-item .line-1{
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: #ddd;
-    display: block;
-}
-.cart-area .product-table tr td .remove-item .line-2{
-    width: 0px;
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: var(--red);
-    transition: width 0.3s;
-}
-.cart-area .product-table tr td .remove-item span:hover .line-1{
-    display: none;
-}
-.cart-area .product-table tr td .remove-item span:hover .line-2{
-    width: 100%;
-}
-.cart-area .product-table tr td .remove-item span:hover{
-    color: var(--red);
-}
-.cart-area .lower-button{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 10px 0 40px 0px;
-    border-bottom: 1px solid #eee;
-}
-.cart-area .lower-button button{
-    background: #f5f5f5;
-    border: none;
-    padding: 0 11px;
-    min-height: 52px;
-    border-radius: 4px;
-    color: var(--red);
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    margin-right: 12px;
-    transition: 0.3s;
-}
-.cart-area .lower-button .continue-clear-btn button:hover{
-    background: var(--red);
-    color:#fff;
-}
-.cart-area .lower-button .continue-clear-btn .clear{
-    color: #696969;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.cart-area .lower-button .continue-clear-btn .clear span:last-child{
-    transition: 0.3s;
-}
-.cart-area .lower-button .continue-clear-btn .clear span:first-child{
-    margin-right: 4px;
-    transition: 0.3s;
-}
-.cart-area .lower-button .continue-clear-btn .clear:hover span:first-child{
-    color: var(--red);
-}
-.cart-area .lower-button .continue-clear-btn .clear:hover span:last-child{
-    color: #252525;
-
-}
-.cart-area .lower-button .update-cart button{
-    background: #ffc221;
-    color: #252525;
-    padding: 0 31px;
-    margin-top: 20px;
-}
-.cart-area .lower-button .update-cart button:disabled{
-    cursor: not-allowed;
-    opacity: 0.5;
-}
-.cart-area .lower-button .update-cart button:hover{
-    background: var(--red);
-    color: #fff;
-}
-.cart-area .total-n-coupon{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 40px 0;
-}
-.cart-area .total-n-coupon .coupon{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.cart-area .total-n-coupon .coupon h6{
-    font-size: 18px;
-    margin-bottom: 18px;
-    margin-top: 15px;
-    color: #252525;
-    font-weight: 600;
-}
-.cart-area .total-n-coupon .coupon p{
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #696969;
-}
-.cart-area .total-n-coupon .coupon input{
-    margin-bottom: 20px;
-    outline: none;
-    border: 1px solid #f5f5f5;
-    background: #f8f8f8;
-    min-height: 52px;
-    width: 100%;
-    border-radius: 5px;
-    padding: 3px 20px;
-    transition: 0.3s;
-}
-.cart-area .total-n-coupon .coupon input:focus{
-    background: #fff;
-    border-color: #88797a;
-}
-.cart-area .total-n-coupon .coupon button,
-.checkout-btn, .comment-submit{
-    border: none;
-    min-height: 52px;
-    background: var(--red);
-    border-radius: 5px;
-    width: 100%;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 600;
-    padding: 0 41px;
-    transition: 0.3s;
-}
-.cart-area .total-n-coupon .coupon button:hover,
-.checkout-btn:hover, .comment-submit:hover{
-    color: #031f42;
-    background: #ffc221;
-}
-.cart-area .total-n-coupon .total{
-    width: 100%;
-    padding: 10px;
-    background: #fff;
-    border: 1px solid #ededed;
-    border-radius: 5px;
-    box-shadow: 0 0 30px rgb(0 0 0 / 5%);
-    margin-top: 30px;
-}
-.cart-area .total-n-coupon .total table .subtotal{
-    font-size: 14px;
-    color: #696969;
-    padding-left: 0;
-}
-.cart-area .total-n-coupon .total table .sub-amt{
-    color: #031f42;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: right;
-    padding-right: 0;
-}
-.cart-area .total-n-coupon .total table .total-txt{
-    font-size: 18px;
-    font-weight: 700;
-    padding: 27px 0 32px 0;
-    color: #252525;
-    border: none;
-}
-.cart-area .total-n-coupon .total table .total-amt{
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--red);
-    text-align: right;
-    padding: 20px 0 32px 0;
-    border: none;
 }
 .blog-area{
     padding: 60px 0 60px 0;
@@ -985,19 +572,7 @@ header{
     color: #fff;
 }
 /*Mobile styles*/
-.student-view .accordion-button{
-    background: #fff;
-    color: #000;
-    font-weight: 600;
-    position: inherit;
-}
 
-.student-view .accordion-button:focus, .accordion-button.btn-focus{
-    box-shadow: none;
-    color: var(--red);
-    border-bottom: 2px solid var(--red);
-    background: #fff;
-}
 .course-item .level-badge{
     display: block;
     background: #e7e8ff;
@@ -1059,34 +634,14 @@ header{
     font-size: 13px;
     color: #7e7e7e;
 }
-.student-view-tabs .heading-for-lap{
-    display: none;
-}
 
+.logo-box{
+    display: flex;
+    align-items: center;
+}
 /*Small tablet styles*/
 @media screen and (min-width: 576px){
-    .top-category .category-box{
-        max-width: 100%;
-        width: auto;
-    }
-    .courses-area .filter span:nth-last-child(2){
-        margin-right: 26px;
-    }
     
-    .cart-area{
-        padding: 60px;
-    }
-    .cart-area .lower-button button{
-        padding: 0 26px;
-        font-size: 14px;
-    }
-    .cart-area .lower-button{
-        flex-direction: row;
-    }
-    .cart-area .lower-button .update-cart button{
-        margin: 0;
-        padding: 0 41px;
-    }
     .blog-area{
         padding-left: 60px;
         padding-right: 60px;
@@ -1109,40 +664,10 @@ header{
     .search-bar-popup{
         display: none;
     }
-    .accordion-for-mobile{
-        display: none;
-    }
-    .student-view-tabs, .tab-content{
-        display: block;
-    }
-    .courses-area .top-filter{
-        flex-direction: row;
-    }
-    .courses-area .top-filter{
-        height: 52px;
-    }
-    .courses-area .top-filter p{
-        margin: 0;
-    }
     .row-area{
         flex-direction: row !important;
     }
-    .cart-area .total-n-coupon{
-        flex-direction: row;
-    }
-    .cart-area .total-n-coupon .coupon{
-        width: 30%;
-    }
-    .cart-area .total-n-coupon .total{
-        width: 30%;
-        margin-top: 0px;
-    }
-    .cart-area .total-n-coupon .coupon button{
-        width: fit-content;
-    }
-    .cart-area .product-table thead tr{
-        display: table-row;
-    }
+    
 }
 
 /*Large tablet and laptop styles*/
@@ -1155,33 +680,12 @@ header{
     .course-item{
         margin-bottom: 30px;
     }
-    .student-view-tabs{
-        display: flex;
-        justify-content: space-between;
-    }
-    .tab-content{
-        padding-top: 0;;
-    }
-    .student-view-tabs .heading-for-lap{
-        display: block;
-    }
-    .student-view .heading-for-mob{
-        display: none;
-    }
     
-    .courses-area .filter span:first-child{
-        display: inline-block;
-    }
     .blogs .date-n-views{
         font-size: 14px;
     }
-    .cart-area .total-n-coupon .total{
-        padding: 25px 30px 34px;
-    }
-    
 }
-
-.courses-area, .blogs, .empty-cart-area{
+.blogs, .empty-cart-area{
     background: #fff;
     padding: 60px;
 }
@@ -1189,37 +693,7 @@ header{
 .row-area{
     flex-direction: column-reverse;
 }
-.courses-area .filter-area ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.courses-area .filter-area ul li{
-    font-size: 14px;
-    margin: 10px 0;
-    color: #696969;
-}
-.courses-area .filter-area ul li label{
-    margin-left: 8px;
-}
-.courses-area .filter-area h4{
-    font-size: 18px;
-    margin-bottom: 23px;
-    color: #252525;
-    font-weight: 500;
-}
-.courses-area .category-by, 
-.courses-area .filter-by-all{
-    padding: 20px 12px 12px 12px;
-    background: #f9f9fb;
-    margin-bottom: 20px;
-}
-.courses-area .filter-area h5{
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 22px;
-}
+
 .instructor-by, .price-by, .level-by, .language-by,
 .duration-by, .rating-by{
     border-bottom: 1px solid #eee;
@@ -1233,8 +707,5 @@ header{
     .container{
         padding: 0 50px;
     }
-    .top-category .category-box{
-        width: auto;
-        max-width: 330px;
-    }
+    
 }

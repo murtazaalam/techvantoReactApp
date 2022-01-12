@@ -7,11 +7,12 @@ import GetStarted from './GetStarted/GetStarted';
 import Partners from './Partners/Partners';
 import Activity from './Activity/Activity';
 import Reviews from './Reviews/Reviews';
-import FormModal from './FormModal/FormModal';
+import Header from './Header/Header';
 
 const Home = () => {
     return(
         <>
+            <Header/>
             <StartSuccess/>
             <Highlight/>
             <TopCategory/>
@@ -20,7 +21,6 @@ const Home = () => {
             <Reviews/>
             <Activity/>
             <Partners/>
-            <FormModal/>
         </>
     )
 }

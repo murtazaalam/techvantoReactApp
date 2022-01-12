@@ -20,7 +20,7 @@ const StudentsViewDisplay = (props) => {
                                 style={{background: '#edbfbf',color: '#f71111'}}>{item.level}</button>}
 
                             {item.level == "Beginner" &&  <button className="level-badge"
-                                style={{background: '#e7e8ff;',color: '#5b63fe'}}>{item.level}</button>}
+                                style={{background: '#e7e8ff',color: '#5b63fe'}}>{item.level}</button>}
                                 
                             <h3 className="title">
                                 <Link to={`/course/${item._id}`} key={item._id}>

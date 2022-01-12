@@ -6,16 +6,20 @@ import SingleCourse from './SingleCourse/SingleCourse';
 import Home from "./Home";
 import AllCourses from "./AllCourses/AllCourses";
 import SingleCat from "./SingleCat/SingleCat";
+import Cart from './Cart/Cart';
+import Profile from "./Profile/Profile";
 
 const Routing = () => {
     return (
         <>
             <BrowserRouter>
-                <Header/>
+                
                     <Route exact path="/" component={Home}></Route>
                     <Route path="/course/:id" component={SingleCourse}></Route>
                     <Route path="/courses" component={AllCourses}></Route>
                     <Route path="/category/:id" component={SingleCat}></Route>
+                    <Route path="/cart" component={Cart}></Route>
+                    <Route path="/profile" component={Profile}></Route>
                 <Footer/>
             </BrowserRouter>
         </>

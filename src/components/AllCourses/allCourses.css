@@ -1,0 +1,103 @@
+.courses-area{
+    background: #fff;
+    padding: 28px 0;
+}
+.courses-area .filter-area ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.courses-area .filter-area ul li{
+    font-size: 14px;
+    margin: 10px 0;
+    color: #696969;
+}
+.courses-area .filter-area ul li label{
+    margin-left: 8px;
+}
+.courses-area .filter-area h4{
+    font-size: 18px;
+    margin-bottom: 23px;
+    color: #252525;
+    font-weight: 500;
+}
+.courses-area .category-by, 
+.courses-area .filter-by-all{
+    padding: 20px 12px 12px 12px;
+    background: #f9f9fb;
+    margin-bottom: 20px;
+}
+.courses-area .filter-area h5{
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+.courses-area .top-filter p{
+    font-size: 15px;
+    color: #7e7e7e;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+.courses-area .filter span:last-child a{
+    padding: 12px 24px;
+    background: #ededed;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--red);
+    border-radius: 4px;
+}
+.courses-area .filter span:nth-last-child(2){
+    padding: 2px 8px;
+    cursor: pointer;
+    color: #ababab;
+}
+.courses-area .filter span:nth-last-child(3){
+    padding: 2px 8px;
+    cursor: pointer;
+    color: #ababab;
+}
+.courses-area .filter span:first-child{
+    display: none;
+    color: #252525;
+    margin-right: 7px;
+    font-weight: 500;
+}
+.courses-area .top-filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 28px 0px;
+}
+.courses-area .top-filter p span{
+    color: #252525;
+    font-weight: 700;
+}
+@media screen and (min-width: 576px){
+    .courses-area .filter span:nth-last-child(2){
+        margin-right: 26px;
+    }
+}
+@media screen and (min-width: 768px){
+    .courses-area .top-filter{
+        flex-direction: row;
+    }
+    .courses-area .top-filter{
+        height: 52px;
+    }
+    .courses-area .top-filter p{
+        margin: 0;
+    }
+}
+@media screen and (min-width: 992px){
+    .courses-area .filter span:first-child{
+        display: inline-block;
+    }
+}
+@media screen and (min-width: 1200px){
+    .courses-area{
+        padding: 28px 60px;
+    }
+}

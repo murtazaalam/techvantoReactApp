@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import RelatedCourses from './RelatedCourses';
 import './singleCourse.css';
 import CategoryDisplay from '../Header/CategoryDisplay';
+import Header from '../Header/Header';
 
 const courseUrl = "http://techvanto.herokuapp.com/allcourses";
 const instructorUrl = "http://techvanto.herokuapp.com/instructor";
@@ -18,7 +19,7 @@ class SingleCourse extends React.Component {
             instructorData:'',
             courseCat:'',
             coursesByCategory:'',
-            newCourseId:'',
+            oldCourseId:'',
             allCat:''
         }
     }
@@ -27,9 +28,9 @@ class SingleCourse extends React.Component {
         var courseDetails = this.state.singleCourse;
         var instructorDetails = this.state.instructorData;
         var courseCategory = this.state.courseCat;
-        console.log("all",this.state.allCat);
         return(
             <>
+                <Header/>
                 <section className="page-heading">
                     <div className="container">
                         <nav aria-label="breadcrumb">
@@ -385,7 +386,7 @@ class SingleCourse extends React.Component {
 
     componentDidMount(){
         var courseId = this.props.match.params.id;
-        this.setState({newCourseId:courseId})
+        this.setState({oldCourseId:courseId})
         //get course by course id
         fetch(`${courseUrl}/${courseId}`, {method:'GET'})
         .then((res)=>res.json())
@@ -420,7 +421,7 @@ class SingleCourse extends React.Component {
     }
 
     componentDidUpdate(){
-        if(this.state.newCourseId != this.props.match.params.id){
+        if(this.state.oldCourseId != this.props.match.params.id){
             this.componentDidMount();
         }
     }

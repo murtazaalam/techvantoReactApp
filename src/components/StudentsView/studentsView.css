@@ -1,0 +1,97 @@
+.student-view .container{
+    padding-top: 28px;
+    background: #fff;
+    padding-bottom: 25px;
+}
+.student-view .heading h3{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+}
+.student-view-tabs, .tab-content{
+    display: none;
+}
+.student-view .student-view-tabs ul{
+    border: none;
+}
+.student-view .student-view-tabs ul li button{
+    border: none;
+    font-size: 14px;
+    line-height: 26px;
+    padding: 7px 26px;
+    border-radius: 3px;
+    color: #696969;
+    transition: 0.3s;
+}
+.student-view .student-view-tabs ul li button.active{
+    color: var(--red);
+    box-shadow: 0 6px 25px rgb(0 0 0 / 10%);
+}
+.student-view .student-view-tabs ul li button:hover{
+    box-shadow: 0 6px 25px rgb(0 0 0 / 10%);
+}
+.student-view .student-view-tabs ul li button:active{
+    color: var(--red);
+    box-shadow: 0 6px 25px rgb(0 0 0 / 10%);
+}
+.student-view .heading h3::after{
+    content: "";
+    height: 12px;
+    width: 91px;
+    position: absolute;
+    background-image: url("https://i.ibb.co/3dk1XsZ/headline-curve.png");
+    bottom: -14px;
+    left: 200px;
+}
+.student-view .accordion-button{
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    position: inherit;
+}
+.student-view .accordion-button:focus, .accordion-button.btn-focus{
+    box-shadow: none;
+    color: var(--red);
+    border-bottom: 2px solid var(--red);
+    background: #fff;
+}
+.accordion-body{
+    padding: 32px 0 20px 0;
+}
+.accordion-body img{
+    border-radius: 4px;
+}
+.student-view-tabs .heading-for-lap{
+    display: none;
+}
+.tab-content{
+    padding-top: 44px;
+}
+
+@media screen and (min-width: 768px){
+    .accordion-for-mobile{
+        display: none;
+    }
+    .student-view-tabs{
+        display: block;
+    }
+    .tab-content{
+        display: block;
+    }
+}
+@media screen and (min-width: 992px){
+    .student-view .heading-for-mob{
+        display: none;
+    }
+    .student-view-tabs{
+        display: flex;
+        justify-content: space-between;
+    }
+    .student-view-tabs .heading-for-lap{
+        display: block;
+    }
+    .tab-content{
+        padding-top: 0;;
+    }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const AllCoursesDisplay = (props) => {
 
@@ -9,7 +10,9 @@ const AllCoursesDisplay = (props) => {
                     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div className="course-item">
                             <div className="image">
-                                <img src={item.image} className="img-fluid" />
+                                <Link to={`/course/${item._id}`}>
+                                    <img src={item.image} className="img-fluid" alt={item.sub_category_name} />
+                                </Link>
                             </div>
                             {item.level == "All Level" &&  <button className="level-badge" 
                                 style={{background: '#c8e1c8',color: '#13ad13'}}>{item.level}</button>}
@@ -21,9 +24,9 @@ const AllCoursesDisplay = (props) => {
                                 style={{background: '#e7e8ff;',color: '#5b63fe'}}>{item.level}</button>}
                                 
                             <h3 className="title">
-                                <a href="#">
+                                <Link to={`/course/${item._id}`}>
                                     {item.sub_category_name}
-                                </a>
+                                </Link>
                             </h3>
                             <p className="text">{item.trainer_name}</p>
                             <span className="price">

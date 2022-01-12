@@ -34,7 +34,7 @@
     cursor: pointer;
 }
 .signup-modal form input[type="text"], input[type="password"],
-input[type="email"]{
+input[type="email"], input[type="number"]{
     background: #f8f8f8;
     border-color: #f8f8f8;
     color: #252525;
@@ -195,6 +195,15 @@ input[type="email"]{
 }
 .signup-modal .login-by-social button:hover{
     background: #ffc221;
+}
+.btn-register{
+    margin-top: 24px;
+}
+.messg{
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
 }
 @media screen and (min-width: 576px){
     .signup-modal .close{

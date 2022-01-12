@@ -1,5 +1,6 @@
 import React from 'react';
 import StudentsViewDisplay from './StudentsViewDisplay';
+import './studentsView.css';
 
 const url = "http://techvanto.herokuapp.com/allcourses";
 
@@ -9,7 +10,7 @@ class StudentsView extends React.Component {
         this.state={
             allCourses:''
         }
-    }
+    } 
     render(){
         return (
             <section className="student-view">

@@ -1,0 +1,54 @@
+.top-category .container{
+    padding-top: 70px;
+    background: #fff;
+}
+.top-category .heading h3{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+}
+.top-category .category-box .icon{
+    font-size: 24px;
+    margin-right: 40px;
+}
+.top-category .heading h3::after{
+    content: "";
+    height: 12px;
+    width: 91px;
+    position: absolute;
+    background-image: url("https://i.ibb.co/3dk1XsZ/headline-curve.png");
+    bottom: -15px;
+    left: 88px;
+}
+.top-category .category-box{
+    width: 100%;
+    height: 72px;
+    background: #fadddd;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    padding-left: 10%;
+    align-items: center;
+    transition: 0.3s;
+}
+.top-category .category-box{
+    font-weight: 600;
+}
+.top-category .category-box:hover{
+    background: var(--red);
+    color: #fff;
+}
+@media screen and (min-width: 576px){
+    .top-category .category-box{
+        max-width: 100%;
+        width: auto;
+    }
+}
+@media screen and (min-width: 1200px){
+    .top-category .category-box{
+        width: auto;
+        max-width: 330px;
+    }
+}
