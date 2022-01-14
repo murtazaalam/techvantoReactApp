@@ -33,14 +33,18 @@ class Header extends React.Component {
         }
     }
     handleSearch = () => {
-        console.log("hello");
-    }
-    handleOptions = (e) => {
-        console.log("hello>>>>>>>>>>>>>>>>>>>>>",e.target);
+        var searchValue = document.getElementById("search-course").value;
+        this.props.history.push('/courses');
+        axios.get(`${courseUrl}?course_name=${searchValue}`).then((res) => {
+            this.props.searchData(res.data);
+        })
     }
     logout = () => {
-        localStorage.setItem("token", "");
-        localStorage.setItem("name", "");
+        localStorage.removeItem("token");
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+        localStorage.removeItem("phone");
+        localStorage.removeItem("courseName");
     }
     // handleModal = () => {
     //     document.getElementsByClassName("modal-backdrop")[0].style.display = "block";
@@ -68,7 +72,7 @@ class Header extends React.Component {
                                     <img src="https://i.ibb.co/BcH8pnR/logo-2.png" alt="logo" width="60" />
                                 </Link>
                                 <div className="category-menu">
-                                    <a href="#" className="">
+                                    <a className="">
                                         <div className="cat-text">
                                             <div className="dots-icon">
                                                 <i className="fa fa-th"></i>
@@ -86,8 +90,7 @@ class Header extends React.Component {
                                     <div className="search-icon" onClick={this.handleSearch}>
                                         <i className="fas fa-search"></i>
                                     </div>
-                                    <input type="text" list="data" className="search-course" placeholder="Search..." 
-                                        onChange={this.handleOptions}/>
+                                    <input type="text" id="search-course" list="data" className="search-course" placeholder="Search..."/>
                                     <datalist id="data">
                                         <DataValue courseValue={this.state.courseData}/>
                                     </datalist>
@@ -123,7 +126,7 @@ class Header extends React.Component {
                                         </div>
                                     </div>
                                     <div className="right-content">
-                                        { localStorage.getItem("token") == "" &&
+                                        { !localStorage.getItem("token") &&
                                         <div className="user">
                                             <div className="login">
                                                 <a href="" data-bs-toggle="modal" data-bs-target="#loginForm"
@@ -140,7 +143,7 @@ class Header extends React.Component {
                                             </div>
                                         </div>
                                         }
-                                        { localStorage.getItem("token") != "" &&
+                                        { localStorage.getItem("token") &&
                                             <div className="user">
                                                 <div className="login">
                                                     <Link to="/profile" >
@@ -187,4 +190,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default withRouter(Header);

@@ -1,5 +1,6 @@
 .profile-box{
     background: #ededed;
+    padding-bottom: 60px;
 }
 .profile{
     display: flex;
@@ -37,6 +38,14 @@
 }
 .text{
     margin: 8px 0;
+}
+.course-name{
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.course-name:hover{
+    color: #131391;
 }
 @media screen and (min-width: 540px){
     .title{

@@ -6,7 +6,6 @@ const TopCategoryDisplay = (props) => {
     const renderCategories = ({categoryData}) => {
         if(categoryData){
             return categoryData.map((item) =>{
-                localStorage.setItem(item._id,item.category_name);
                 return(
                     <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={item._id}>
                         <Link to={`/category/${item._id}`} className="cat-link">

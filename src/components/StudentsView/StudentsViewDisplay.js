@@ -29,7 +29,15 @@ const StudentsViewDisplay = (props) => {
                             </h3>
                             <p className="text"><b>{item.trainer_name}</b></p>
                             <span className="price">
-                                <i className="fas fa-rupee-sign"></i>&nbsp;{item.price}.<span className="decimal">00</span>
+                                {item.price != "0" &&
+                                    <>
+                                        <i className="fa fa-rupee-sign"></i> {item.price}.<span className="decimal">00</span>
+                                    </>
+                                }
+                                {
+                                    item.price == "0" &&
+                                    <span>Free</span>
+                                }
                             </span>
                             <div className="rating">
                                 <span className="star-icon">

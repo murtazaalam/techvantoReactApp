@@ -4,6 +4,8 @@ import axios from 'axios';
 import AllCoursesDisplay from './AllCoursesDisplay';
 import Pagination from './Pagination';
 import AllCategory from './AllCategory';
+import CostFilter from './CostFilter';
+import LevelFilter from './LevelFilter';
 import './allCourses.css';
 import Header from '../Header/Header';
 
@@ -21,11 +23,14 @@ class AllCourses extends React.Component {
             categories:''
         }
     }
+    update = (value) => {
+        this.setState({allCourses:value})
+    }
     render(){
         var numOfPage = Math.ceil(this.state.totalCourse/9);
         return(
             <>
-                <Header/>
+                <Header searchData={(data) => this.update(data)}/>
                 <section className="page-heading">
                     <div className="container">
                         <nav aria-label="breadcrumb">
@@ -52,100 +57,22 @@ class AllCourses extends React.Component {
                                     <div className="category-by">
                                         <h4>Filter by category</h4>
                                         <ul>
-                                            <AllCategory allCategories={this.state.categories}/>
+                                            <AllCategory allCategories={this.state.categories} 
+                                                categoryFilter={(data) => this.update(data)}/>
                                         </ul>
                                     </div>
                                     <div className="filter-by-all">
-                                        <h4>Filter by</h4>
-                                        {/* <div className="instructor-by">
-                                            <h5>INSTRUTOR</h5>
-                                            <ul>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Art & Design(8)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Business(10)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Data Science(7)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Development(10)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Finance(7)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Health & Fitness(9)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Lifestyle(9)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Marketing(9)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Music(9)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Personal Development(9)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Photography(9)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Teaching & Academics(9)</label>
-                                                </li>
-                                            </ul>
-                                        </div> */}
                                         <div className="price-by">
                                             <h5>Price</h5>
                                             <ul>
-                                                <li> 
-                                                    <input type="radio" className="form-check-input"/>
-                                                    <label className="form-check-label">All(98)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="radio" className="form-check-input"/>
-                                                    <label className="form-check-label">Free(9)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="radio" className="form-check-input"/>
-                                                    <label className="form-check-label">Paid(89)</label>
-                                                </li>
+                                                <CostFilter costFilter={(data) => this.update(data)} />
                                             </ul>
                                         </div>
                                         <div className="level-by">
                                             <h5>Level</h5>
                                             <ul>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">All Levels(13)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Beginners(2)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Intermediate(7)</label>
-                                                </li>
-                                                <li> 
-                                                    <input type="checkbox" className="form-check-input"/>
-                                                    <label className="form-check-label">Expert(4)</label>
-                                                </li>
+                                                <LevelFilter levelFilter={(data) => this.update(data)} />
+                                                
                                             </ul>
                                         </div>
                                         <div className="language-by">

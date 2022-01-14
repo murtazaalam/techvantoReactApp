@@ -1,22 +1,35 @@
 import React from 'react';
+import axios from 'axios';
 
-const AllCategory = (props) => {
-    const renderCategories = ({allCategories}) => {
+const url = "http://techvanto.herokuapp.com/courses";
+class AllCategory extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    getcat = (id) => {
+        axios.get(`${url}/${id}`).then((res) => {
+            this.props.categoryFilter(res.data)
+        })
+    }
+    renderCategories = ({allCategories}) => {
         if(allCategories){
             return allCategories.map((item) => {
                 return (
-                    <li> 
-                        <input type="checkbox" className="form-check-input"/>
-                        <label className="form-check-label">{item.category_name}(8)</label>
+                    <li key={item._id}> 
+                        <input type="radio" name="category" onChange={(e) => this.getcat(e.target.value)} value={item._id} 
+                            className="form-check-input"/>
+                        <label className="form-check-label">{item.category_name}</label>
                     </li>
                 )
             })
         }
     }
-    return (
-        <>
-            {renderCategories(props)}
-        </>
-    )
+    render(){
+        return (
+            <>
+                {this.renderCategories(this.props)}
+            </>
+        )
+    }
 }
 export default AllCategory;

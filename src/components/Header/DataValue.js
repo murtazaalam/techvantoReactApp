@@ -7,7 +7,7 @@ const DataValue = (props) => {
         if(courseValue){
             return courseValue.map((item) => {
                 return (
-                    <option value={item._id} key={item._id}>{item.sub_category_name}</option>
+                    <option value={item.sub_category_name} key={item._id}/>
                 )
             })
         }

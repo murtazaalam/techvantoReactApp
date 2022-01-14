@@ -60,16 +60,21 @@ class Login extends React.Component {
                 localStorage.setItem("token",res.data.token);
                 document.getElementById("lmessg").innerText = "Logged in Successfully.";
                 document.getElementById("lmessg").style.color = "green";
-                // document.getElementsByClassName("modal-backdrop")[0].style.display = "none";
-                // document.getElementById("loginForm").style.display = "none";
-
-                this.props.history.push("/");
+                document.getElementsByClassName("modal-backdrop")[0].classList.remove("modal-backdrop");
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementsByTagName("body")[0].style.overflow = "auto";
+                document.getElementsByTagName("body")[0].style.paddingRight = "0";
+                document.getElementById("navbar-top").style.paddingRight = "0";
+                
                 axios.get(urlUser, {
                     headers:{
                         "x-access-token":res.data.token
                     }
                 }).then((result) => {
                     localStorage.setItem("name",result.data.name);
+                    localStorage.setItem("email",result.data.email);
+                    localStorage.setItem("phone",result.data.phone);
+                    this.props.history.push("/");
                 })
                 
             })

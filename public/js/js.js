@@ -6,8 +6,11 @@ document.addEventListener("DOMContentLoaded", function(){
             this.document.body.style.paddingTop = navbar_height + 'px';
         }
         else{
-            this.document.getElementById('navbar-top').classList.remove('fixed-top');
-            document.body.style.paddingTop = '0';
+            if(this.document.getElementById('navbar-top')){
+                this.document.getElementById('navbar-top').classList.remove('fixed-top');
+                document.body.style.paddingTop = '0';
+            }
+            
         }
     })
 

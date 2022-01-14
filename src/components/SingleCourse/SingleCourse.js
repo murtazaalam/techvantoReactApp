@@ -24,10 +24,20 @@ class SingleCourse extends React.Component {
         }
     }
 
+    addToCart = () => {
+        var courseArray = [];
+        courseArray.push(this.state.singleCourse.sub_category_name);
+        courseArray.push(this.state.singleCourse.price);
+        courseArray.push(this.state.singleCourse.image);
+        courseArray.push(this.state.singleCourse._id);
+        sessionStorage.setItem("courseDetails",courseArray);
+    }
+
     render(){
         var courseDetails = this.state.singleCourse;
         var instructorDetails = this.state.instructorData;
         var courseCategory = this.state.courseCat;
+        
         return(
             <>
                 <Header/>
@@ -350,16 +360,18 @@ class SingleCourse extends React.Component {
                                                 <span className="heading">Language</span>
                                             </p>
                                             <p className="sub-heading">
-                                                Russian
+                                                English
                                             </p>    
                                         </div> 
                                         <div> 
-                                            <button type="button">
-                                                <span>
-                                                    <i className="fas fa-shopping-cart"></i>
-                                                </span>
-                                                Add to cart
-                                            </button>
+                                            <Link to="/cart">
+                                                <button type="button" onClick={this.addToCart}>
+                                                    <span>
+                                                        <i className="fas fa-shopping-cart"></i>
+                                                    </span>
+                                                    Add to cart
+                                                </button>
+                                            </Link>
                                             <button type="button">
                                                 Add to wishlist
                                             </button>

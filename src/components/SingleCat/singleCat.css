@@ -19,7 +19,7 @@
     position: absolute;
     background-image: url("https://i.ibb.co/3dk1XsZ/headline-curve.png");
     bottom: -15px;
-    left: 88px;
+    left: 64px;
 }
 .top-category .category-box{
     width: 100%;
@@ -35,6 +35,67 @@
 }
 .top-category .category-box{
     font-weight: 600;
+} 
+.course-item .level-badge{
+    display: block;
+    background: #e7e8ff;
+    border: none;
+    color: #5b63fe;
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 16px;
+}
+.course-item h3{
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.course-item h3 a{
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+}
+.course-item h3 a:hover{
+    color: var(--red);
+}
+.course-item{
+    margin-bottom: 20px;
+}
+.course-item .image{
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.course-item img{
+    width: 100%;
+    transition: 1s ease-in-out;
+}
+.course-item img:hover{
+    transform: scale(1.5);
+}
+.course-item .title{
+    font-size: 15px !important;
+}
+.course-item p{
+    font-size: 13px;
+    color: #7e7e7e;
+}
+.price{
+    font-weight: 800;
+}
+.price .decimal{
+    font-size: 12px;
+}
+.rating{
+    font-size: 13px;
+}
+.rating .total-rating{
+    color: #ccc;
+}
+.rating .star-icon{
+    color: #f7c04d;
 }
 .top-category .category-box:hover{
     background: var(--red);
@@ -44,6 +105,15 @@
     .top-category .category-box{
         max-width: 100%;
         width: auto;
+    }
+}
+@media screen and (min-width: 992px){
+    .course-card{
+        max-width: 20% !important;
+        width: auto !important;
+    }
+    .course-item{
+        margin-bottom: 30px;
     }
 }
 @media screen and (min-width: 1200px){
