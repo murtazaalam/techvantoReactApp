@@ -1,8 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import StudentsViewDisplay from './StudentsViewDisplay';
 import './studentsView.css';
 
-const url = "http://techvanto.herokuapp.com/allcourses";
+const url = "http://techvanto.herokuapp.com/allcourses?limit_value=15";
 
 class StudentsView extends React.Component {
     constructor(props) {
@@ -105,6 +106,9 @@ class StudentsView extends React.Component {
                         <div className="tab-pane fade show active" role="tabpanel" id="allTab">
                             <div className="row">
                                 <StudentsViewDisplay allCoursesData={this.state.allCourses}/>
+                            </div>
+                            <div className="text-center">
+                                <Link to='/courses' className="see-all-courses">See All Courses</Link>
                             </div>
                         </div>
                         <div className="tab-pane fade" role="tabpanel" id="trendingTab">workingt</div>

@@ -267,7 +267,7 @@ header{
     display: flex;
     position: absolute;
     top: 54px;
-    right: -148px;
+    right: -162px;
     flex-direction: column-reverse;
     background: #fff;
     transition: right 0.3s;
@@ -316,6 +316,13 @@ header{
 }
 .user .login{
     margin: 8px 0;
+}
+.hide-arrow{
+    position: absolute;
+    height: 100%;
+    right: 60px;
+    width: 18px;
+    background: #f2f2f2;
 }
 @media screen and (min-width: 768px){
     .header-wrap .page-navigation{

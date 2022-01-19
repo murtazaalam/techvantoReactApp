@@ -68,7 +68,19 @@
 .tab-content{
     padding-top: 44px;
 }
-
+.see-all-courses{
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 10px;
+    background: #fadddd;
+    color: #000;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.see-all-courses:hover{
+    background:#cf202d;
+    color: #fff;
+}
 @media screen and (min-width: 768px){
     .accordion-for-mobile{
         display: none;

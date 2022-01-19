@@ -10,6 +10,8 @@ import Reviews from './Reviews/Reviews';
 import Header from './Header/Header';
 
 const Home = () => {
+    localStorage.removeItem("onAllCourse");
+    localStorage.removeItem("seaarchData");
     return(
         <>
             <Header/>

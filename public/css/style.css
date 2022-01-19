@@ -90,7 +90,9 @@ header{
 }
 .page ul li span{
     border-radius: 50% !important;
-    padding: 6px 14px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
     border: none;
 }
 .page .active span{

@@ -25,19 +25,34 @@ class Header extends React.Component {
         var rightValue = style.getPropertyValue("right");
         console.log(rightValue)
                     
-        if(rightValue == "-148px"){
-            document.getElementById("mobile-content").style.right = "0px";
+        if(rightValue == "-162px"){
+            document.getElementById("mobile-content").style.right = "-10px";
         }
         else{
-            document.getElementById("mobile-content").style.right = "-148px"; 
+            document.getElementById("mobile-content").style.right = "-162px"; 
         }
     }
     handleSearch = () => {
         var searchValue = document.getElementById("search-course").value;
-        this.props.history.push('/courses');
-        axios.get(`${courseUrl}?course_name=${searchValue}`).then((res) => {
-            this.props.searchData(res.data);
-        })
+        if(localStorage.getItem("onAllCourse")){
+            localStorage.removeItem("onAllCourse");
+            localStorage.removeItem("seaarchData");
+
+            axios.get(`${courseUrl}?course_name=${searchValue}`).then((res) => {
+                this.props.searchData(res.data);
+                localStorage.setItem("seaarchData",JSON.stringify(res.data));
+                document.getElementById("pagination").style.display = "none";
+            })
+        }
+        else{
+            axios.get(`${courseUrl}?course_name=${searchValue}`).then((res) => {
+                //this.props.searchData(res.data);
+                localStorage.setItem("seaarchData",JSON.stringify(res.data));
+                this.props.history.push('/courses');
+                document.getElementById("pagination").style.display = "none";
+            })
+        }
+        
     }
     logout = () => {
         localStorage.removeItem("token");
@@ -45,12 +60,15 @@ class Header extends React.Component {
         localStorage.removeItem("email");
         localStorage.removeItem("phone");
         localStorage.removeItem("courseName");
+        localStorage.removeItem("onAllCourse");
+        localStorage.removeItem("seaarchData");
     }
-    // handleModal = () => {
-    //     document.getElementsByClassName("modal-backdrop")[0].style.display = "block";
-    //     document.getElementById("loginForm").style.display = "block";
-    // }
+    removeSearch = () => {
+        localStorage.removeItem("onAllCourse");
+        localStorage.removeItem("seaarchData");
+    }
     render() {
+        
         return (
             <>
                 <header id="navbar-top" className="header-box">
@@ -90,7 +108,9 @@ class Header extends React.Component {
                                     <div className="search-icon" onClick={this.handleSearch}>
                                         <i className="fas fa-search"></i>
                                     </div>
-                                    <input type="text" id="search-course" list="data" className="search-course" placeholder="Search..."/>
+                                    {/* <div className="hide-arrow" id="hide-arrow"></div> */}
+                                    <input type="text" id="search-course" onFocus={this.inputFocus} list="data" className="search-course" 
+                                        placeholder="Search..."/>
                                     <datalist id="data">
                                         <DataValue courseValue={this.state.courseData}/>
                                     </datalist>
@@ -110,7 +130,7 @@ class Header extends React.Component {
                                                         </div>
                                                     </li> */}
                                                     <li className="menu menu-item become-instructor">
-                                                        <Link to="/courses">
+                                                        <Link to="/courses" onClick={this.removeSearch}>
                                                             Courses
                                                             <div className="moving-line"></div>
                                                         </Link>
@@ -121,7 +141,7 @@ class Header extends React.Component {
                                         <div className="cart">
                                             <Link to="/cart" className="">
                                                 <img src="https://i.ibb.co/X4YncQT/shopping-cart.png" alt="Cart" width="23" />
-                                                <div className="counting">0</div>
+                                                {/* <div className="counting">0</div> */}
                                             </Link>
                                         </div>
                                     </div>
@@ -153,7 +173,7 @@ class Header extends React.Component {
                                                 </div>
                                                 <div className="sign-up">
                                                     <Link to="/" className="sign-up-btn" onClick={this.logout}>
-                                                        Logout
+                                                        <i class="fas fa-sign-out-alt"></i>&nbsp;Logout
                                                     </Link>
                                                 </div>
                                             </div>

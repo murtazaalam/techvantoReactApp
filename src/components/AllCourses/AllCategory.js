@@ -7,6 +7,8 @@ class AllCategory extends React.Component {
         super(props);
     }
     getcat = (id) => {
+        localStorage.removeItem("seaarchData");
+        document.getElementById("pagination").style.display = "none";
         axios.get(`${url}/${id}`).then((res) => {
             this.props.categoryFilter(res.data)
         })
@@ -16,7 +18,7 @@ class AllCategory extends React.Component {
             return allCategories.map((item) => {
                 return (
                     <li key={item._id}> 
-                        <input type="radio" name="category" onChange={(e) => this.getcat(e.target.value)} value={item._id} 
+                        <input type="radio" name="radio" onChange={(e) => this.getcat(e.target.value)} value={item._id} 
                             className="form-check-input"/>
                         <label className="form-check-label">{item.category_name}</label>
                     </li>

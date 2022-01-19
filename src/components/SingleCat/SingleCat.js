@@ -17,6 +17,8 @@ class SingleCat extends React.Component{
         }
     }
     render() {
+        localStorage.removeItem("onAllCourse");
+        localStorage.removeItem("seaarchData");
         return (
             <>
                 <Header/>

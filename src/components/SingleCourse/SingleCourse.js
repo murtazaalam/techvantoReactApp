@@ -37,6 +37,8 @@ class SingleCourse extends React.Component {
         var courseDetails = this.state.singleCourse;
         var instructorDetails = this.state.instructorData;
         var courseCategory = this.state.courseCat;
+        localStorage.removeItem("onAllCourse");
+        localStorage.removeItem("seaarchData");
         
         return(
             <>

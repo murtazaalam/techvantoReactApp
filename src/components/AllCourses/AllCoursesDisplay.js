@@ -7,7 +7,7 @@ const AllCoursesDisplay = (props) => {
         if(allCourseData){
             return allCourseData.map((item) => {
                 return (
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12" key={item._id}>
                         <div className="course-item">
                             <div className="image">
                                 <Link to={`/course/${item._id}`}>
@@ -21,7 +21,7 @@ const AllCoursesDisplay = (props) => {
                                 style={{background: '#edbfbf',color: '#f71111'}}>{item.level}</button>}
 
                             {item.level == "Beginner" &&  <button className="level-badge"
-                                style={{background: '#e7e8ff;',color: '#5b63fe'}}>{item.level}</button>}
+                                style={{background: '#e7e8ff',color: '#5b63fe'}}>{item.level}</button>}
                                 
                             <h3 className="title">
                                 <Link to={`/course/${item._id}`}>

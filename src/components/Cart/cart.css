@@ -226,10 +226,19 @@
 .cart-area .total-n-coupon .total table .total-amt{
     font-size: 24px;
     font-weight: 700;
-    color: var(--red);
+    color: #cf202d;
     text-align: right;
     padding: 20px 0 32px 0;
     border: none;
+    position: relative;
+}
+.cart-area .total-n-coupon .total table .discout-amount{
+    position: absolute;
+    margin: 0;
+    font-size: 16px;
+    color: #1fa108;
+    right: 0;
+    font-weight: 600;
 }
 .img-column{
     display: none;

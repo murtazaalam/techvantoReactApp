@@ -18,11 +18,13 @@ class Cart extends React.Component {
             cost:'',
             courseId:'',
             courseName:'',
+            discount: 0,
             currentDateTime: new Date().toLocaleString()
         }
     }
     
     checkout = () => {
+        document.getElementById("user-msg").innerHTML = "";
         if(sessionStorage.getItem("courseDetails")){
             var cost = document.getElementById("final-cost").innerHTML;
             var courseId = document.getElementById("course-id").value;
@@ -38,12 +40,19 @@ class Cart extends React.Component {
     payment = () => {
         localStorage.setItem('courseName',this.state.courseName);
         var obj = this.state;
-        axios.post(ordersUrl, obj).then((res) => {
-            //window.location.href='http://localhost:4100/paynow'
-            console.log("course added")
-        }).catch((err) => {
-            console.log(err);
-        })
+        if(localStorage.getItem("token")){
+            axios.post(ordersUrl, obj).then((res) => {
+                //window.location.href='http://localhost:4100/paynow'
+                console.log("course added")
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+        else{
+            document.getElementById("user-msg").innerHTML = "Please login to pay";
+            document.getElementById("user-msg").style.color = "red";
+            document.getElementById("user-msg").style.fontWeight = "600";
+        }
     }
     confirm = () => {
         sessionStorage.removeItem("courseDetails");
@@ -65,33 +74,47 @@ class Cart extends React.Component {
     }
     coupon = () => {
         var code = document.getElementById("coupon").value;
-        var currentDate = this.state.currentDateTime.split(',')[0];
-        if(code != ""){
-            axios.get(`${couponUrl}${code}`).then((res) => {
-                if(res.data[0]){
-                    var expiry = res.data[0].expiry.split('T')[0];
-                    console.log(expiry.format('dd-m-yy'),currentDate.format('dd-m-yy'));
-                    var diffTime = Math.abs(expiry - this.state.currentDateTime.split(',')[0]);
-                    console.log(diffTime)
-                    document.getElementById("msg").innerHTML = `<i class='fas fa-check-circle'></i> Coupon Code ${res.data[0].code} Applied Successfully`;
-                    document.getElementById("msg").style.color = '#08a108';
+        var currentDate = new Date(this.state.currentDateTime.split(',')[0]);
+            if(sessionStorage.getItem("courseDetails")){
+                if(code != ""){
+                    axios.get(`${couponUrl}${code}`).then((res) => {
+                        if(res.data[0]){
+                            var expiry = new Date(res.data[0].expiry.split('T')[0]);
+                            var diffTime = expiry - currentDate;
+                            if(diffTime >= 0){
+                                document.getElementById("msg").innerHTML = `<i class='fas fa-check-circle'></i> Coupon Code ${res.data[0].code} Applied Successfully`;
+                                document.getElementById("msg").style.color = '#08a108';
+                                this.setState({discount:res.data[0].discount})
+                            }
+                            else{
+                                document.getElementById("msg").innerHTML = "Coupon Expired";
+                                document.getElementById("msg").style.color = '#cf202d';
+                            }
+                            
+                        }
+                        else{
+                            document.getElementById("msg").innerHTML = "Invalid Coupon";
+                            document.getElementById("msg").style.color = '#cf202d';
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                    })
                 }
                 else{
-                    document.getElementById("msg").innerHTML = "Invalid Coupon";
+                    document.getElementById("msg").innerHTML = "Please Enter A Coupon Code";
                     document.getElementById("msg").style.color = '#cf202d';
                 }
-            }).catch((err) => {
-                console.log(err);
-            })
-        }
+            }
         else{
-            document.getElementById("msg").innerHTML = "Please Enter A Coupon Code";
+            document.getElementById("msg").innerHTML = "Please choose a course";
             document.getElementById("msg").style.color = '#cf202d';
         }
     }
     render() {
         let course = sessionStorage.getItem("courseDetails");
         let courseArray = [];
+        localStorage.removeItem("onAllCourse");
+        localStorage.removeItem("seaarchData");
         if(course){
             course.split(",").map((item) => {
                 courseArray.push(item);
@@ -181,7 +204,7 @@ class Cart extends React.Component {
                         <div className="total-n-coupon">
                             <div className="coupon">
                                 <h6>Coupon Discount</h6>
-                                <p>Enter coupon code if you have.</p>
+                                <p>Enter coupon code if you have</p>
                                 <input type="text" id="coupon" className="" placeholder="Coupon code" onChange={this.blankCoupon} />
                                 <span id="msg" className="coupon-msg"></span>
                                 <button type="button" onClick={this.coupon}>Apply coupon</button>
@@ -205,7 +228,17 @@ class Cart extends React.Component {
                                                 Total
                                             </td>
                                             <td className="total-amt">
-                                                <span><i className="fas fa-rupee-sign"></i></span> <b id="final-cost">{courseArray[1]}</b>.00
+                                                <span>
+                                                    <i className="fas fa-rupee-sign"></i>
+                                                </span> <b id="final-cost">
+                                                    {Math.ceil(courseArray[1] - (courseArray[1]*(this.state.discount/100)))}
+                                                    </b>.00
+                                                {this.state.discount > 0 &&
+                                                    <p className="discout-amount" id="discount">
+                                                        - <i className="fas fa-rupee-sign"></i>&nbsp; 
+                                                        {Math.floor(courseArray[1]*(this.state.discount/100))}
+                                                    </p>
+                                                }
                                             </td>
                                         </tr>
                                     </tbody>
@@ -230,6 +263,7 @@ class Cart extends React.Component {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
+                        <p className="text-center user-msg" id="user-msg"></p>
                         {sessionStorage.getItem("courseDetails") ?
                             <table className="table table-borderless">
                                 <thead>
@@ -265,7 +299,8 @@ class Cart extends React.Component {
                             <input type="hidden" name="courseName" value={this.state.courseName}/>
                             <input type="hidden" id="course-id" value={courseArray[3]}/>
                             {sessionStorage.getItem("courseDetails") &&
-                            <button type="submit" className="btn btn-primary" onClick={this.payment}>Pay Now</button>
+                            <button type={localStorage.getItem('token')?'submit':'button'} className="btn btn-primary" 
+                                onClick={this.payment}>Pay Now</button>
                             }
                         </form>
                     </div>

@@ -24,6 +24,9 @@ class Profile extends React.Component {
         }
     }
     render() {
+        localStorage.removeItem("onAllCourse");
+        localStorage.removeItem("seaarchData");
+        
         if(localStorage.getItem("token")){
             return(
                 <>

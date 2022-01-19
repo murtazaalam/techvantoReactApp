@@ -9,8 +9,12 @@ class CostFilter extends React.Component{
     }
     
     getValue = (value) => {
+        
+        localStorage.removeItem("seaarchData");
+        document.getElementById("pagination").style.display = "none";
+
         if(value == ""){
-            axios.get(`${url}`).then((res) => {
+            axios.get(`${url}?status=active`).then((res) => {
                 this.props.costFilter(res.data);
             })
         }
@@ -24,15 +28,15 @@ class CostFilter extends React.Component{
         return(
         <>
             <li> 
-                <input type="radio" name="cost" className="form-check-input" value="" onChange={(e) => this.getValue(e.target.value)}/>
+                <input type="radio" name="radio" className="form-check-input" value="" onChange={(e) => this.getValue(e.target.value)}/>
                 <label className="form-check-label">All</label>
             </li>
             <li> 
-                <input type="radio" name="cost" className="form-check-input" value="0" onChange={(e) => this.getValue(e.target.value)}/>
+                <input type="radio" name="radio" className="form-check-input" value="0" onChange={(e) => this.getValue(e.target.value)}/>
                 <label className="form-check-label">Free</label>
             </li>
             <li> 
-                <input type="radio" name="cost" className="form-check-input" value="10" onChange={(e) => this.getValue(e.target.value)}/>
+                <input type="radio" name="radio" className="form-check-input" value="10" onChange={(e) => this.getValue(e.target.value)}/>
                 <label className="form-check-label">Paid</label>
             </li>
         </>
